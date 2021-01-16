@@ -67,7 +67,7 @@ export default function Navbar() {
                                 initial="hidden"                        
                                 animate="visible"
                                 exit={{opacity:0}} 
-                    transition={{ duration: 0 }}
+                    transition={{height:0,  duration: 0 }}
                                 custom={i}
                                 key={i}
                                 className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer "><span className="ml-2">{items}</span></motion.li>                                
