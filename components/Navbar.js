@@ -17,7 +17,7 @@ export default function Navbar() {
     return (
         <>
             {/* Navbar Mobile*/}
-            <nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-nav bg-white top-0 flex  px-2 py-3 shadow-lg " + (navState ? 'h-screen' : '') }>
+            <nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-nav bg-white top-0 flex  px-2 py-3 shadow-lg " + (navState ? 'h-full' : 'h-16') }>
             <div className="container px-4 mx-auto w-full relative flex items-center justify-between ">
                         <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/">
                             Matthew Mayfield
@@ -77,7 +77,7 @@ export default function Navbar() {
                         <motion.div 
                         exit={{height:0, opacity:0}} 
             transition={{ duration: 0 }}
-            className="px-3 py-2 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
+            className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
                                 {darkMode.value == true ?
                                     <>
                                         <button className="focus:outline-none text-2xl" onClick={darkMode.disable}>

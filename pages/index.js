@@ -8,8 +8,15 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, minimal-ui"></meta>
       </Head>
       <Navbar />
+      <div className="pt-16">
+      <div className="h-64">heahehts</div>
+      <div className="h-64">heahehts</div>
+      <div className="h-64">heahehts</div>
+      <div className="h-64">heahehts</div>
+      </div>
       
     </div>
   )
