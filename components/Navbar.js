@@ -1,8 +1,12 @@
 import useDarkMode from 'use-dark-mode';
 import React, { useState } from 'react';
+import { motion } from "framer-motion"
+import { AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
     const [navState, setNavState] = useState(false)
+
+    const navItems = ['About Me', 'Portfolio', 'Contact', 'Coffee']
 
     const darkModeConfig = {
         classNameDark: 'dark',
@@ -15,7 +19,7 @@ export default function Navbar() {
             {/* Navbar Mobile*/}
             <nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-nav bg-white top-0 flex  px-2 py-3 shadow-lg " + (navState ? 'h-screen' : '') }>
             <div className="container px-4 mx-auto w-full relative flex items-center justify-between ">
-                        <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/learning-lab/tailwind-starter-kit/presentation">
+                        <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/">
                             Matthew Mayfield
               </a>
                         <button onClick={() => setNavState(!navState)} className="text-yellow-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
@@ -30,15 +34,39 @@ export default function Navbar() {
 }
                         </button>
                     </div>
+                    <AnimatePresence>
                     <div className="flex-1 container px-4 mx-auto flex  items-center">
                     
                     {navState && <>
-                        <div className="flex flex-col h-full w-full" >
+                        <motion.div 
+                    initial={{ x: '-100%', opacity: 0}} 
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -300, opacity: 0 }}
+                    transition={{ duration: .3 }}
+                    className="flex flex-col h-full w-full" >
                         <ul className="space-y-4 flex flex-col h-full justify-center items-center list-none ">
-                            <li className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">About Me</span></li>
-                            <li className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Portfolio</span></li>
-                            <li className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Contact</span></li>
-                            <li className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Coffee</span></li>
+                            
+                            {navItems.map((items, i) => (
+                                <motion.li 
+                                variants={{
+                                    hidden: {
+                                        opacity: 0,
+                                        y: -50,
+                                    },
+                                    visible:(i) => ({
+                                        opacity: 1,
+                                        y: 0,
+                                        transition: {
+                                            delay: i * .05 + .3,
+                                        },
+                                    }),
+                                }}
+                                initial="hidden"                        
+                                animate="visible"
+                                custom={i}
+                                key={i}
+                                className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">{items}</span></motion.li>                                
+                            ))}
                             
                         </ul>
                         <div className="px-3 py-2 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
@@ -55,10 +83,11 @@ export default function Navbar() {
                                         </>
                                         }
                             </div></span></div>
-                    </div>
+                    </motion.div>
                     </> }
                 </div>
-            </nav>
+                </AnimatePresence>
+                </nav>
             {/* End Navbar Mobile*/}
 
 
@@ -68,7 +97,7 @@ export default function Navbar() {
             <nav className="hidden fixed z-50 w-full dark:bg-matt-nav bg-white top-0 lg:flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg shadow-lg">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                        <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600 " href="/learning-lab/tailwind-starter-kit/presentation">
+                        <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600 " href="/">
                             Matthew Mayfield
               </a>
                         <button onClick={() => setNavState(!navState)} className="text-yellow-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none">
