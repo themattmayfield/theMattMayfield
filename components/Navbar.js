@@ -42,7 +42,7 @@ export default function Navbar() {
                     initial={{ x: '-100%', opacity: 0}} 
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ x: -300, opacity: 0 }}
-                    transition={{ duration: .3 }}
+                    transition={{ duration: .2 }}
                     className="flex flex-col h-full w-full" >
                         <ul className="space-y-4 flex flex-col h-full justify-center items-center list-none ">
                             
@@ -57,7 +57,7 @@ export default function Navbar() {
                                         opacity: 1,
                                         y: 0,
                                         transition: {
-                                            delay: i * .05 + .3,
+                                            delay: i * .05 + .2,
                                         },
                                     }),
                                 }}
