@@ -34,15 +34,18 @@ export default function Navbar() {
 }
                         </button>
                     </div>
-                    <AnimatePresence>
-                    <div className="flex-1 container px-4 mx-auto flex  items-center">
                     
-                    {navState && <>
-                        <motion.div 
+<AnimatePresence initial={false}>
+    {navState && <>
+                    <motion.div 
                     initial={{ x: '-100%', opacity: 0}} 
                     animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -300, opacity: 0 }}
-                    transition={{ duration: .2 }}
+                    exit={{height:0}} 
+                    transition={{ duration: .6 }}
+                    className="flex-1 container px-4 mx-auto flex items-center">
+                    
+                    
+                        <div
                     className="flex flex-col h-full w-full" >
                         <ul className="space-y-4 flex flex-col h-full justify-center items-center list-none ">
                             
@@ -63,13 +66,18 @@ export default function Navbar() {
                                 }}
                                 initial="hidden"                        
                                 animate="visible"
+                                exit={{opacity:0}} 
+                    transition={{ duration: 0 }}
                                 custom={i}
                                 key={i}
-                                className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">{items}</span></motion.li>                                
+                                className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer "><span className="ml-2">{items}</span></motion.li>                                
                             ))}
                             
                         </ul>
-                        <div className="px-3 py-2 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
+                        <motion.div 
+                        exit={{height:0, opacity:0}} 
+            transition={{ duration: 0 }}
+            className="px-3 py-2 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
                                 {darkMode.value == true ?
                                     <>
                                         <button className="focus:outline-none text-2xl" onClick={darkMode.disable}>
@@ -82,10 +90,12 @@ export default function Navbar() {
                                         </button> 
                                         </>
                                         }
-                            </div></span></div>
-                    </motion.div>
-                    </> }
-                </div>
+                            </div></span></motion.div>
+                    </div>
+                    
+                </motion.div>
+                </> }
+                    
                 </AnimatePresence>
                 </nav>
             {/* End Navbar Mobile*/}
