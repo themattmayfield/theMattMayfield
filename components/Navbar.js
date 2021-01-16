@@ -41,7 +41,7 @@ export default function Navbar() {
                     initial={{ x: '-100%', opacity: 0}} 
                     animate={{ x: 0, opacity: 1 }}
                     exit={{height:0}} 
-                    transition={{ duration: .5 }}
+                    transition={{ duration: .3 }}
                     className="flex-1 container px-4 mx-auto flex items-center">
                     
                     
@@ -60,7 +60,7 @@ export default function Navbar() {
                                         opacity: 1,
                                         y: 0,
                                         transition: {
-                                            delay: i * .05 + .2,
+                                            delay: i * .05 + .3,
                                         },
                                     }),
                                 }}
