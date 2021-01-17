@@ -38,9 +38,9 @@ export default function Navbar(props) {
     {navState && <>
                     <motion.div 
                     initial={{ x: '-100%', opacity: 0}} 
-                    animate={{ x: 0, opacity: 1 }}
+                    animate={{ x: 0, opacity: 1, transition: {duration:.3} }}
                     exit={{height:0}} 
-                    transition={{ duration: .3 }}
+                    // transition={{ duration: 6 }}
                     className="flex-1 container px-4 mx-auto flex items-center">
                     
                     
@@ -65,8 +65,8 @@ export default function Navbar(props) {
                                 }}
                                 initial="hidden"                        
                                 animate="visible"
-                                exit={{opacity:0}} 
-                    transition={{height:0,  duration: 0 }}
+                                exit={{height:0,  opacity:0}} 
+                    transition={{duration: 0 }}
                                 custom={i}
                                 key={i}
                                 className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer "><span className="ml-2">{items}</span></motion.li>                                

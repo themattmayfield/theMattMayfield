@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
       <Navbar navState={navState} scrollHandler={scrollHandler} />
       
-      <div className="pt-16">
+      <div className={"pt-16 " + (navState ? 'hidden' : '')}>
       <div className="h-64">heahehts</div>
       <div className="h-64">heahehts</div>
       <div className="h-64">heahehts</div>
