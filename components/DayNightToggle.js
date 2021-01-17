@@ -8,7 +8,8 @@ const Wrapper = styled(animated.div)`
   transform: ${({ mobile }) => (mobile ? 'scale(1)' : 'scale(0.7)')};
   margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
   margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
-  position: ${({ mobile }) => (mobile ? 'relative' : 'relative')};
+  position: relative;
+  // position: ${({ mobile }) => (mobile ? 'relative' : 'relative')};
   right: ${({ mobile }) => (mobile ? null : '0')};
 
   & input {

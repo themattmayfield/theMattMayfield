@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       colors: {
         'matt-dark': '#212121',
-        'matt-nav': 'rgba(33,33,33,0.95)'
+        'matt-nav': 'rgba(33,33,33)'
       }
     },
   },
