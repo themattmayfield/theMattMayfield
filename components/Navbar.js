@@ -10,20 +10,38 @@ export default function Navbar(props) {
     return (
         <>
             {/* Navbar Mobile*/}
-            <nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-darknav matt-lightnav flex  px-2 py-3 shadow-lg " + (navState ? 'h-full overflow-hidden' : 'h-16')}>
+            <nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-darknav matt-lightnav flex  px-2 py-3 shadow " + (navState ? 'h-full overflow-hidden' : 'h-16')}>
                 <div className="container px-4 mx-auto w-full relative flex items-center justify-between ">
                     <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/">
                         Matthew Mayfield
               </a>
                     <button onClick={props.scrollHandler} className="text-yellow-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
                         {navState ?
-                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <AnimatePresence initial={false}>
+                            <motion.svg 
+                            animate={{
+                                scale: [1, 1, 1, 1, 1],
+                                rotate: [180, 0, 0, 0],
+                                transition: {duration: 3},
+                                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                              }}
+                              className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
+                            </motion.svg>
+                            </AnimatePresence>
                             :
-                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <motion.svg 
+                            initial={{opacity: .2 }}
+                            animate={{ opacity: 1, transition: { duration: .5 } }}
+                            // animate={{
+                            //     scale: [1, 1, 1, 1, 1],
+                            //     rotate: [180, 0, 0, 0],
+                            //     transition: {duration: 3},
+                            //     borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                            //   }} 
+                              className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
+                            </motion.svg>
                         }
                     </button>
                 </div>
@@ -40,7 +58,7 @@ export default function Navbar(props) {
 
                             <div
                                 className="flex flex-col h-full w-full" >
-                                <ul className="space-y-4 flex flex-col h-full justify-center items-center list-none ">
+                                <ul className="space-y-6 flex flex-col h-full justify-center items-center list-none ">
 
                                     {navItems.map((items, i) => (
                                         <motion.li
@@ -51,9 +69,14 @@ export default function Navbar(props) {
                                                 },
                                                 visible: (i) => ({
                                                     opacity: 1,
-                                                    y: 0,
+                                                    y: [10, 0],
                                                     transition: {
                                                         delay: i * .05 + .3,
+                                                        y: {
+                                                            duration: i * .05 + .3,
+                                                            yoyo: 2,
+                                                            ease: "easeOut",
+                                                          }
                                                     },
                                                 }),
                                             }}
@@ -72,19 +95,7 @@ export default function Navbar(props) {
                                     exit={{ height: 0, opacity: 0 }}
                                     transition={{ duration: 0 }}
                                     className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div className>
-                                        <DayNightToggle mobile />
-                                        {/* {darkMode.value == true ?
-                                    <>
-                                        <button className="focus:outline-none text-2xl" onClick={darkMode.disable}>
-                                            ☀
-                                        </button> </>
-                                    :
-                                    <>
-                                        <button className="focus:outline-none text-2xl" onClick={darkMode.enable}>
-                                        🌙
-                                        </button> 
-                                        </>
-                                        } */}
+                                        <DayNightToggle  />                                        
                                     </div></span></motion.div>
                             </div>
 
@@ -118,18 +129,7 @@ export default function Navbar(props) {
                             <li className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Contact</span></li>
                             <li className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Coffee</span></li>
                             <li className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
-                                <DayNightToggle />{/* {darkMode.value == true ?
-                                    <>
-                                        <button className="focus:outline-none text-2xl" onClick={darkMode.disable}>
-                                            ☀
-                                        </button> </>
-                                    :
-                                    <>
-                                        <button className="focus:outline-none text-2xl" onClick={darkMode.enable}>
-                                        🌙
-                                        </button> 
-                                        </>
-                                        } */}
+                                <DayNightToggle />
                             </div></span></li>
                         </ul>
                     </div>

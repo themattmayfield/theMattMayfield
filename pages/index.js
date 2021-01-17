@@ -10,7 +10,7 @@ export default function Home() {
     }
 
   return (
-    <div className={"relative bg-white dark:bg-matt-dark" + (navState ? 'h-screen overflow-hidden' : '')}>
+    <div className={"relative bg-white dark:bg-matt-dark " + (navState ? 'h-screen overflow-hidden' : '')}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
