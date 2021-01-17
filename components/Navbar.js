@@ -1,17 +1,11 @@
-import useDarkMode from 'use-dark-mode';
 import { motion } from "framer-motion"
 import { AnimatePresence } from 'framer-motion';
+import DayNightToggle from './DayNightToggle'
 
 export default function Navbar(props) {
     const navState = props.navState
 
     const navItems = ['About Me', 'Portfolio', 'Contact', 'Coffee']
-
-    const darkModeConfig = {
-        classNameDark: 'dark',
-        classNameLight: 'light'
-    }
-    const darkMode = useDarkMode(false, darkModeConfig);
 
     return (
         <>
@@ -73,11 +67,13 @@ export default function Navbar(props) {
                             ))}
                             
                         </ul>
+                        
                         <motion.div 
                         exit={{height:0, opacity:0}} 
             transition={{ duration: 0 }}
-            className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
-                                {darkMode.value == true ?
+            className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div className>
+                             <DayNightToggle mobile />
+                             {/* {darkMode.value == true ?
                                     <>
                                         <button className="focus:outline-none text-2xl" onClick={darkMode.disable}>
                                             ☀
@@ -88,7 +84,7 @@ export default function Navbar(props) {
                                         🌙
                                         </button> 
                                         </>
-                                        }
+                                        } */}
                             </div></span></motion.div>
                     </div>
                     
@@ -122,7 +118,7 @@ export default function Navbar(props) {
                             <li className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Contact</span></li>
                             <li className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2">Coffee</span></li>
                             <li className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div>
-                                {darkMode.value == true ?
+                            <DayNightToggle />{/* {darkMode.value == true ?
                                     <>
                                         <button className="focus:outline-none text-2xl" onClick={darkMode.disable}>
                                             ☀
@@ -133,7 +129,7 @@ export default function Navbar(props) {
                                         🌙
                                         </button> 
                                         </>
-                                        }
+                                        } */}
                             </div></span></li>
                         </ul>
                     </div>
