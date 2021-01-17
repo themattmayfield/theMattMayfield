@@ -10,7 +10,7 @@ export default function Home() {
     }
 
   return (
-    <div className={"relative bg-gray-200 " + (navState ? 'h-screen overflow-hidden' : '')}>
+    <div className={"relative bg-white dark:bg-matt-dark" + (navState ? 'h-screen overflow-hidden' : '')}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -18,11 +18,8 @@ export default function Home() {
       </Head>
       <Navbar navState={navState} scrollHandler={scrollHandler} />
       
-      <div className={"pt-16 " + (navState ? 'hidden' : '')}>
-      <div className="h-64">heahehts</div>
-      <div className="h-64">heahehts</div>
-      <div className="h-64">heahehts</div>
-      <div className="h-64">heahehts</div>
+      <div className={"pt-16 h-screen " + (navState ? 'hidden' : '')}>
+      
       </div>
       
     </div>
