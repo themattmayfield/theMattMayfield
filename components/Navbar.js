@@ -1,10 +1,9 @@
 import useDarkMode from 'use-dark-mode';
-import React, { useState } from 'react';
 import { motion } from "framer-motion"
 import { AnimatePresence } from 'framer-motion';
 
-export default function Navbar() {
-    const [navState, setNavState] = useState(false)
+export default function Navbar(props) {
+    const navState = props.navState
 
     const navItems = ['About Me', 'Portfolio', 'Contact', 'Coffee']
 
@@ -22,7 +21,7 @@ export default function Navbar() {
                         <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/">
                             Matthew Mayfield
               </a>
-                        <button onClick={() => setNavState(!navState)} className="text-yellow-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
+                        <button onClick={props.scrollHandler} className="text-yellow-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
                             {navState ? 
                             <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
