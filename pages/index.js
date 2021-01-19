@@ -16,10 +16,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, minimal-ui"></meta>
       </Head>
+      {/* <div class="h-16"> */}
       <Navbar navState={navState} scrollHandler={scrollHandler} />
+      {/* </div> */}
       
-      <div className={"pt-16 h-screen " + (navState ? 'hidden' : '')}>
-      
+      <div className={"text-white pt-16 h-screen " + (navState ? 'hidden' : '')}>
+      some testing
       </div>
       
     </div>
