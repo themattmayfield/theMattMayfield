@@ -10,6 +10,9 @@ module.exports = {
       },
       transitionProperty: {
         'height': 'height'
+       },
+       transitionDuration: {
+        '0': '0ms'
        }
     },
   },
