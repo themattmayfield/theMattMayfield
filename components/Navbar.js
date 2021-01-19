@@ -12,10 +12,7 @@ console.log(navState);
         <>
             {/* Navbar Mobile*/}
             
-            <motion.nav 
-                initial={{height: 64, opacity:1}}
-                animate={ navState ? { height: '100%', opacity: 1, transition: { duration: 0 }} : {height: 64, opacity:1, transition: { delay: .31 }}}             
-                className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-darknav matt-lightnav flex  px-2 py-3 shadow " + (navState ? 'h-full overflow-hidden' : '')}>
+            <motion.nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-darknav matt-lightnav flex  px-2 py-3 shadow " + (navState ? 'h-full overflow-hidden' : 'transition-height  delay-300 h-16')}>
                  <div className="container px-4 mx-auto w-full relative flex items-center justify-between ">
                     <a className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/">
                         Matthew Mayfield

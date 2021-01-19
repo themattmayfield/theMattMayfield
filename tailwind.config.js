@@ -7,7 +7,10 @@ module.exports = {
         'matt-dark': '#212121',
         'matt-darknav': 'rgba(33,33,33)',
         'matt-lightnav': 'rgba(255,255,255)'
-      }
+      },
+      transitionProperty: {
+        'height': 'height'
+       }
     },
   },
   variants: {
