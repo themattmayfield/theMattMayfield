@@ -1,11 +1,9 @@
-import ChevronDown from '../UI.js/ChevronDown'
 
-export default function Hero(props) {
+export default function AboutMe(props) {
 
     return (
         <>
             <div className="bg-transparent h-full flex pt-16">
-            <ChevronDown class="text-white w-5 h-5" />
             </div>
         </>
     );

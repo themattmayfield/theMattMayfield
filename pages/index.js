@@ -1,5 +1,7 @@
 import Head from 'next/head'
-import Navbar from "../components/Navbar";
+import Navbar from "../components/NavbarMobile";
+import NavbarDesktop from "../components/NavbarDesktop";
+import NavbarFull from "../components/NavbarFull";
 import React, { useState } from 'react';
 import Hero from '../components/Sections/Hero'
 import AboutMe from '../components/Sections/AboutMe'
@@ -23,7 +25,9 @@ export default function Home() {
       </Head>
 
       <Navbar navState={navState} scrollHandler={scrollHandler} />
-         
+      
+         <NavbarFull navState={navState} />
+<NavbarDesktop />
          <Hero />   
 
          <AboutMe />
