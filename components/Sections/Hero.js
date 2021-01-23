@@ -27,11 +27,11 @@ export default function Hero(props) {
             : setcurrentHypeText(currentHypeText + 1)
         }, 2500);
     }
-    hypeTextHandler()
+    // hypeTextHandler()
 
     return (
         <>
-            <div className="bg-transparent h-screen pt-16 px-8 lg:px-24 container mx-auto flex flex-col justify-between">
+            <div className="bg-transparent my-view pt-16 px-8 lg:px-24 container mx-auto flex flex-col justify-between">
                 <div></div>
 
                 <div className="space-y-2">
@@ -41,7 +41,7 @@ export default function Hero(props) {
                     <button className="rounded-full bg-yellow-900 py-2 px-6 text-white font-light focus:outline-none">About Me</button>
                 </div>
 
-                <div className="w-full flex justify-center h-12">
+                <div className="w-full flex justify-center h-10">
                     <ChevronDown class="w-6 h-6 cursor-pointer text-yellow-900" />
                 </div>
             </div>

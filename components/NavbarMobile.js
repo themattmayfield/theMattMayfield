@@ -40,7 +40,7 @@ export default function Navbar(props) {
 
     return (
         <>
-            <nav className={"lg:hidden flex-col fixed z-50 w-full dark:bg-matt-darknav matt-lightnav flex  px-2 py-3 shadow h-16"}>
+            <nav className={"lg:hidden fixed z-50 w-full dark:bg-matt-darknav matt-lightnav  px-2 py-3 shadow h-16"}>
                 <div className="container px-4 mx-auto w-full relative flex items-center justify-between ">
                     <motion.a
                         variants={LogoVarients}

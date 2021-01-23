@@ -60,12 +60,11 @@ export default function NavbarFull(props) {
                         variants={MainDivVarients}
                         animate={'open'}
                         exit={'closed'}
-                        className="lg:hidden h-screen pt-16">
+                        className="lg:hidden my-view">
 
                         <div
-                            className="flex flex-col h-full w-full" >
-                            <ul className="space-y-6 flex flex-col h-full justify-center items-center list-none ">
-
+                            className="flex flex-col my-view relative w-full" >
+                            <ul className="space-y-6 flex flex-col my-view justify-center items-center list-none ">
                                 {navItems.map((items, i) => (
                                     <motion.li
                                         variants={NavItemsVarients}
@@ -78,7 +77,7 @@ export default function NavbarFull(props) {
 
                             </ul>
 
-                            <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div className>
+                            <div className="px-3 py-4  mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div className>
                                 <DayNightToggle />
                             </div></span></div>
                         </div>
