@@ -46,10 +46,10 @@ export default function Navbar(props) {
                         variants={LogoVarients}
                         initial="post"
                         animate={headerBounce ? 'visible' : 'post'}
-                        className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600" href="/">
+                        className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-matt-textlight text-matt-textdark" href="/">
                         Matthew Mayfield
               </motion.a>
-                    <button onClick={props.scrollHandler} className="text-yellow-800 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
+                    <button onClick={props.scrollHandler} className="text-yellow-900 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
                         {navState ?
                             <Times
                                 animate={TimesAnimation}

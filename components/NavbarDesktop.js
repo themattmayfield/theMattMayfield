@@ -91,7 +91,7 @@ export default function Navbar(props) {
                     variants={LogoVarients}
                     initial="hidden"
                             animate={firstBounce ? "visible" : 'post'}
-                     className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-gray-300 text-gray-600 " href="/">
+                     className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-matt-textlight text-matt-textdark " href="/">
                             Matthew Mayfield
               </motion.a>
                                      
@@ -106,12 +106,12 @@ export default function Navbar(props) {
                             animate={firstBounce ? "visible" : 'post'}
                             custom={i}
                             key={i}
-                             className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer">
+                             className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer">
                                 {i != 4 ? <a href={items.path}>
                                      <span className="ml-2">
-                                     items.text 
+                                     {items.text} 
                                      </span>
-                                 </a>: <span className="ml-2"><div><DayNightToggle /></div></span> }
+                                 </a> : <span className="ml-2"><div><DayNightToggle /></div></span> }
                                  </motion.li>                             
                              
                         ))}

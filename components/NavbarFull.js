@@ -73,12 +73,12 @@ export default function NavbarFull(props) {
                                         animate="visible"
                                         custom={i}
                                         key={i}
-                                        className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer "><a href={items.path}><span className="ml-2">{items.text}</span></a></motion.li>
+                                        className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer "><a href={items.path}><span className="ml-2">{items.text}</span></a></motion.li>
                                 ))}
 
                             </ul>
 
-                            <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-gray-300 dark:hover:text-yellow-800 text-gray-600 hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div className>
+                            <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer"><span className="ml-2"><div className>
                                 <DayNightToggle />
                             </div></span></div>
                         </div>
