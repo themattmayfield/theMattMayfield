@@ -1,36 +1,9 @@
 import ChevronDown from '../UI/ChevronDown'
 import React, { useState } from 'react';
 import { motion } from "framer-motion"
-import { AnimatePresence } from 'framer-motion';
+import WordsFading from '../UI/WordsFading'
 
 export default function Hero() {
-
-    const hypeText = [
-        {
-            text: 'Hero of the Web',
-            id: 0
-        },
-        {
-            text: 'Digital Architect',
-            id: 1
-        },
-        {
-            text: 'React Connoisseur',
-            id: 1
-        }
-    ]
-
-    const [currentHypeText, setcurrentHypeText] = useState(0)
-
-    const hypeTextHandler = () => {
-        setInterval(() => {
-            hypeText[hypeText.length - 1].id === currentHypeText
-                ? setcurrentHypeText(0)
-                : setcurrentHypeText(currentHypeText + 1)
-        }, 2500);
-    }
-    // hypeTextHandler()
-
 
     const Hello = {
         hidden: {
@@ -121,7 +94,9 @@ export default function Hero() {
                         variants={hypeTextAnimation}
                         initial="hidden"
                         animate="visible"
-                        className="text-matt-textdark dark:text-matt-textlight text-base lg:text-xl font-extralight pb-10 ">{hypeText[currentHypeText].text}</motion.p>
+                        className="text-matt-textdark dark:text-matt-textlight text-base lg:text-xl font-extralight pb-10 ">                            
+                            <WordsFading />
+                            </motion.p>
                     <motion.button
                         variants={AboutMeButton}
                         initial="hidden"
