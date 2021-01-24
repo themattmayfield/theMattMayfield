@@ -7,28 +7,25 @@ import Hero from '../components/Sections/Hero'
 import AboutMe from '../components/Sections/AboutMe'
 import Portfolio from '../components/Sections/Portfolio'
 import Contact from '../components/Sections/Contact'
+
+
 export default function Home() {
 
-  
-
   if (typeof window !== "undefined") {
-let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     window.addEventListener('resize', () => {
-      // We execute the same script as before
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', `${vh}px`);
     });
   }
-  
 
   const [navState, setNavState] = useState(false)
 
   const scrollHandler = () => {
     setNavState(!navState)
     !navState ? document.body.classList.add('overflow-hidden') : document.body.classList.remove('overflow-hidden')
-    // TODO: if screen is greater than a certain size, then you can add the overflow-hidden
   }
 
   return (
@@ -38,19 +35,19 @@ let vh = window.innerHeight * 0.01;
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, minimal-ui"></meta>
       </Head>
-      
+
       <Navbar navState={navState} scrollHandler={scrollHandler} />
       <NavbarFull navState={navState} />
       <NavbarDesktop />
 
       <div className={navState ? 'hidden' : ''}>
-      <Hero />
+        <Hero />
 
-<AboutMe />
+        <AboutMe />
 
-<Portfolio />
+        <Portfolio />
 
-<Contact />
+        <Contact />
       </div>
 
     </div>
