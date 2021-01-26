@@ -2,6 +2,7 @@ import ChevronDown from '../UI/ChevronDown'
 import React, { useState } from 'react';
 import { motion } from "framer-motion"
 import WordsFading from '../UI/WordsFading'
+import { Link } from 'react-scroll';
 
 export default function Hero() {
 
@@ -97,19 +98,23 @@ export default function Hero() {
                         className="text-matt-textdark dark:text-matt-textlight text-base lg:text-xl font-extralight pb-10 ">                            
                             <WordsFading />
                             </motion.p>
+                            <Link to="about-me" spy={true} smooth={true}>
                     <motion.button
                         variants={AboutMeButton}
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
                         className="rounded-full bg-yellow-900 py-2 px-6 text-white font-light focus:outline-none">About Me</motion.button>
+                        </Link>
                 </div>
 
                 <motion.div
                     variants={chevronAnimation}
                     initial="hidden"
                     animate="visible" className="w-full flex justify-center h-10">
-                    <ChevronDown class="w-6 h-6 cursor-pointer text-yellow-900" />
+                    <Link to="about-me" spy={true} smooth={true}>
+                        <ChevronDown class="w-6 h-6 cursor-pointer text-yellow-900" />
+                    </Link>
                 </motion.div>
             </div>
         </>
