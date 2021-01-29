@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     
-      <div className={"bg-white dark:bg-matt-dark select-none "}>
+      <div className={"bg-white dark:bg-matt-dark select-none flex flex-col"}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

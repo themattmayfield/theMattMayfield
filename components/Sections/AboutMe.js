@@ -1,11 +1,14 @@
+import Wrapper from '../Layouts/SectionWrapper'
 
 export default function AboutMe(props) {
 
     return (
         <>
-            <div className="bg-transparent my-view flex pt-16" id="about">
+        <Wrapper id="about">
+            <div className="bg-transparent my-view flex " >
                 start
             </div>
+            </Wrapper>
         </>
     );
 }

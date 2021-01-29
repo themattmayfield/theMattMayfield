@@ -1,10 +1,14 @@
+import Wrapper from '../Layouts/SectionWrapper'
 
 export default function Contact(props) {
 
     return (
         <>
-            <div className="bg-transparent my-view flex pt-16"  id="contact">
+            <Wrapper id="contact">
+            <div className="bg-transparent my-view flex " >
+                start
             </div>
+            </Wrapper>
         </>
     );
 }
