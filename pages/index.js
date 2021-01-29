@@ -38,7 +38,7 @@ export default function Home() {
       <NavbarDesktop />
       
 
-      <div className={navState ? 'invisible' : ''}>
+      <div className={"transition-opacity  " + (navState ? 'opacity-0' : 'delay-300 duration-1000 opacity-100')}>
         <Hero />
 
         <AboutMe />

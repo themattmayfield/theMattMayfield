@@ -21,7 +21,7 @@ export default function NavbarFull() {
                             variants={MainDivVarients}
                             animate={'open'}
                             exit={'closed'}
-                            className="lg:hidden my-view fixed w-full">
+                            className="lg:hidden my-view fixed w-full z-10">
 
                             <div
                                 className="flex flex-col my-view relative w-full" >

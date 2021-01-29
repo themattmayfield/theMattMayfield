@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html id="html">
+      <Html>
         <Head />
         <body className="lg:overflow-scroll">
           <Main />
