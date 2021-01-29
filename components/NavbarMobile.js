@@ -1,10 +1,12 @@
+import { useNavState, useNavStateUpdate } from './Utils/NavContext'
 import { motion } from "framer-motion"
-import Link from 'next/link'
 import React, { useState } from 'react';
 import Bars from './UI/Bars'
 import Times from './UI/Times'
-export default function Navbar(props) {
-    const navState = props.navState
+
+export default function Navbar() {
+    const navState = useNavState()
+    const scrollHandler = useNavStateUpdate()
 
     const [headerBounce, setHeaderBounce] = useState(true)
 
@@ -49,7 +51,7 @@ export default function Navbar(props) {
                         className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-matt-textlight text-matt-textdark" href="/">
                         Matthew Mayfield
               </motion.a>
-                    <button onClick={props.scrollHandler} className="text-yellow-900 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
+                    <button onClick={scrollHandler} className="text-yellow-900 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none">
                         {navState ?
                             <Times
                                 animate={TimesAnimation}
