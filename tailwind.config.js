@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         'matt-dark': '#212121',
         'matt-darknav': 'rgba(33,33,33)',
-        'matt-lightnav': 'rgba(255,255,255)',
+        'matt-lightnav': 'rgba(255,255,255, .95)',
         'matt-textlight': '#F0F0F0',
         'matt-textdark': '#333333'
       },

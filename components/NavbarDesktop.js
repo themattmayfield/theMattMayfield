@@ -58,7 +58,7 @@ export default function Navbar() {
     }
     return (
         <>         
-            <nav className="hidden fixed z-50 w-full dark:bg-matt-darknav bg-white top-0 lg:flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg shadow h-16">
+            <nav className="hidden fixed z-50 w-full dark:bg-matt-darknav bg-white opacity-95 top-0 lg:flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg shadow h-16">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">                    
                         <motion.a 
