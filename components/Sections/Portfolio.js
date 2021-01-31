@@ -5,8 +5,8 @@ export default function Portfolio() {
 
     return (
         <>
-        <Wrapper id="portfolio">
-            <h2 className="w-full text-center">Portfolio</h2>
+        <Wrapper id="portfolio" title="Portfolio">
+            
 
             <PortfolioItems />
 
