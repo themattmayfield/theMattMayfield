@@ -1,11 +1,12 @@
 import Image from 'next/image'
 
+
 export default function PortfolioItem(props) {
 
     return (
         <>
           <Image
-          className="rounded cursor-pointer"
+          className="rounded"
       src={props.path}
       alt={props.alt}
       width={500}

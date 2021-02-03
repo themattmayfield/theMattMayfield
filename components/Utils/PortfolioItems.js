@@ -1,19 +1,18 @@
 import Image from 'next/image'
 import PortfolioItem from './PortfolioItem'
-
-
+import Button from '../UI/Button'
 
 const Items = [
   {
     id: 0,
     title: 'Work',
-    path: '/test.png',
+    path: '/heroLight.png',
     alt: 'Picture of the author'
   },
   {
     id: 1,
     title: 'Work',
-    path: '/test.png',
+    path: '/heroDark.png',
     alt: 'Picture of the author'
   },
   {
@@ -25,27 +24,37 @@ const Items = [
   {
     id: 3,
     title: 'Work',
-    path: '/test.png',
+    path: '/heroLight.png',
     alt: 'Picture of the author'
   }
 ]
+
+const filler = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
+industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+ make a type specimen book.`
 
 export default function PortfolioItems(props) {
 
   return (
     <>
-      <div className="flex flex-col space-y-12">
+      <div className="flex flex-col space-y-32">
 
         {Items.map((item, i) => (
-          
-            <div className="">
+
+          <div className="space-y-12">
             <p className="text-center">Title of project</p>
-            <div className="flex items-center w-full justify-around">
-              <PortfolioItem path={Items[0].path} alt={Items[0].alt} />
-              <p>sometihng</p>
+            <div className={"lg:flex w-full justify-around text-center " + (i % 2 != 0 ? 'flex-row-reverse' : '')}>
+              <PortfolioItem path={item.path} alt={item.alt} />
+              <div className="flex flex-col my-auto space-y-6 lg:w-1/2">
+                <p className={"text-center " + (i % 2 != 0 ? 'lg:text-left' : 'lg:text-right')}>{filler}</p>
+                <div className="flex justify-center space-x-4">
+                  <Button>gnrtueigwbsl</Button>
+                  <Button>gnrtueigwbsl</Button>
+                </div>
+              </div>
             </div>
-            </div>
-          
+          </div>
+
         ))}
 
 

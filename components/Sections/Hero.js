@@ -1,5 +1,4 @@
 import ChevronDown from '../UI/ChevronDown'
-import React, { useState } from 'react';
 import { motion } from "framer-motion"
 import WordsFading from '../UI/WordsFading'
 import { Link } from 'react-scroll';

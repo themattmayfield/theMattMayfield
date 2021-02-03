@@ -1,36 +1,33 @@
-import React from 'react';
-import styled from 'styled-components';
-import { animated } from 'react-spring';
+import { motion } from "framer-motion"
 
-const StyledButton = styled(animated.button)`
-  outline: none;
-  background: var(--primary);
-  color: var(--white);
-  text-transform: uppercase;
-  font-family: inherit;
-  font-weight: 700;
-  border: 1px transparent;
-  border-radius: 10rem;
-  font-size: 1.1rem;
-  letter-spacing: 1.5px;
-  padding: 1.5rem 4rem;
-  margin: 0rem;
-  cursor: pointer;
-  box-shadow: 0px 8px 15px var(--shadow-color);
-  transition: all 0.2s ease-out;
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 15px 20px var(--shadow-btn);
+const AboutMeButton = {
+  hidden: {
+    opacity: 0,
+    y: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 1.06,
+      y: {
+        duration: .35,
+        ease: "easeOut",
+      }
+    },
   }
-  &:active {
-    transform: translateY(1px);
-    box-shadow: 0 3px 10px var(--shadow-btn);
-  }
- 
-`;
-
-const Button = ({ children, ...rest }) => (
-  <StyledButton {...rest}>{children}</StyledButton>
+}
+const Button = ({ children }) => (
+  <motion.button whileHover={{
+    scale: 1.07,
+    transition: {
+      type: "spring"
+    }
+  }}
+    exit="hidden"
+    className="rounded-full bg-yellow-900 py-2 px-6 text-white font-light focus:outline-none" >
+    {children}
+  </motion.button>
 );
 
 export default Button;
