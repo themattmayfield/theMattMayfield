@@ -1,43 +1,56 @@
 import Image from 'next/image'
+import PortfolioItem from './PortfolioItem'
+
+
+
+const Items = [
+  {
+    id: 0,
+    title: 'Work',
+    path: '/test.png',
+    alt: 'Picture of the author'
+  },
+  {
+    id: 1,
+    title: 'Work',
+    path: '/test.png',
+    alt: 'Picture of the author'
+  },
+  {
+    id: 2,
+    title: 'Work',
+    path: '/test.png',
+    alt: 'Picture of the author'
+  },
+  {
+    id: 3,
+    title: 'Work',
+    path: '/test.png',
+    alt: 'Picture of the author'
+  }
+]
 
 export default function PortfolioItems(props) {
 
-    return (
-        <>
-          <div className="grid md:grid-cols-3 gap-4">
-          <Image
-          className="rounded cursor-pointer"
-      src="/test.png"
-      alt="Picture of the author"
-      width={500}
-      height={300}
-    />
+  return (
+    <>
+      <div className="flex flex-col space-y-12">
 
-<Image
-          className="rounded cursor-pointer"
-      src="/test.png"
-      alt="Picture of the author"
-      width={500}
-      height={300}
-    />
+        {Items.map((item, i) => (
+          
+            <div className="">
+            <p className="text-center">Title of project</p>
+            <div className="flex items-center w-full justify-around">
+              <PortfolioItem path={Items[0].path} alt={Items[0].alt} />
+              <p>sometihng</p>
+            </div>
+            </div>
+          
+        ))}
 
-<Image
-          className="rounded cursor-pointer"
-      src="/test.png"
-      alt="Picture of the author"
-      width={500}
-      height={300}
-    />
 
-<Image
-          className="rounded cursor-pointer"
-      src="/test.png"
-      alt="Picture of the author"
-      width={500}
-      height={300}
-    />
-      
-          </div>
-        </>
-    );
+
+      </div>
+    </>
+  );
 }

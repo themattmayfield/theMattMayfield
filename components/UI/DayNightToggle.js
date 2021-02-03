@@ -5,12 +5,12 @@ import { useSpring, animated } from 'react-spring';
 
 const Wrapper = styled(animated.div)`
 
-  display: flex;
-  transform: scale(1);
-  margin: 1rem 0;
-  margin-right: 0rem;
-  position: relative;
-  right: null;
+  // display: flex;
+  // transform: scale(1);
+  // margin: 1rem 0;
+  // margin-right: 0rem;
+  // position: relative;
+  // right: null;
 
   // transform: ${({ mobile }) => (mobile ? 'scale(1)' : 'scale(0.7)')};
   // margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
@@ -18,6 +18,13 @@ const Wrapper = styled(animated.div)`
   // position: relative;
   // // position: ${({ mobile }) => (mobile ? 'relative' : 'relative')};
   // right: ${({ mobile }) => (mobile ? null : '0')};
+
+  display: flex;
+  transform: ${({ mobile }) => (mobile ? 'scale(1)' : 'scale(0.7)')};
+  margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
+  margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
+  position: ${({ mobile }) => (mobile ? 'relative' : 'relative')};
+  right: ${({ mobile }) => (mobile ? null : '0')};
 
   & input {
     position: absolute;
@@ -191,7 +198,8 @@ const Span = styled.span`
   }
 `;
 
-const darkModeToggle = () => {
+const darkModeToggle = ({ mobile }) => {
+  console.log({mobile});
     const darkModeConfig = {
         classNameDark: 'dark',
         classNameLight: 'light'
@@ -204,7 +212,7 @@ const darkModeToggle = () => {
     from: { opacity: 0 },
   });
   return (
-    <Wrapper style={darkModeToggleSpring} >
+    <Wrapper style={darkModeToggleSpring} mobile={mobile}>
       <input
         type="checkbox"
         id="dn"

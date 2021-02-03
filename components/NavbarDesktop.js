@@ -58,7 +58,7 @@ export default function Navbar() {
     }
     return (
         <>         
-            <nav className="hidden fixed z-50 w-full dark:bg-matt-darknav bg-white opacity-95 top-0 lg:flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg shadow h-16">
+            <nav className="hidden fixed z-50 w-full dark:bg-matt-darknav bg-white opacity-95 top-0 lg:flex flex-wrap items-center justify-between px-2 navbar-expand-lg shadow h-16">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">                    
                         <motion.a 
@@ -73,14 +73,16 @@ export default function Navbar() {
                     <div className="lg:flex flex-grow items-center" >
                         <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
                         <NavItems animate={firstBounce ? "visible" : 'post'} />
-                        <motion.li
+                        
+                        </ul>
+
+                        <motion.div
                             variants={ToggleAnimation}
                             initial="hidden"
                             animate={firstBounce ? "visible" : 'post'}
-                             className="px-3 py-2 flex items-center text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer">
-                                 <span className="ml-2"><div><DayNightToggle /></div></span>
-                          </motion.li>
-                        </ul>
+                             className="flex ml-2">                                     
+                                         <DayNightToggle />
+                          </motion.div>
                     </div>
                 </div>
             </nav>

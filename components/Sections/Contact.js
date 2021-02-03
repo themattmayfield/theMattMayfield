@@ -1,14 +1,12 @@
-import Wrapper from '../Layouts/SectionWrapper'
+import SectionWrapper from '../Layouts/SectionWrapper'
 
-export default function Contact(props) {
+export default function AboutMe(props) {
 
     return (
         <>
-            <Wrapper id="contact">
-            <div className="bg-transparent my-view flex " >
-                start
-            </div>
-            </Wrapper>
+        <SectionWrapper id="contact" title="Contact Me">
+
+            </SectionWrapper>
         </>
     );
 }
