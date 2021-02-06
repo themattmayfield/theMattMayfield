@@ -17,6 +17,7 @@ export default function Navbar() {
             opacity: 0,
             y: -50,
         },
+        
         post: {
             opacity: 1,
             y: 0,
