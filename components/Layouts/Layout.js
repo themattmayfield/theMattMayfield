@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Head from 'next/head'
-import Navbar from "../NavbarMobile";
-import NavbarDesktop from "../NavbarDesktop";
-import NavbarFull from "../NavbarFull";
-import { useNavState, useNavStateUpdate } from '../Utils/NavContext'
+import Navbar from "../Utils/Nav/NavbarMobile";
+import NavbarDesktop from "../Utils/Nav/NavbarDesktop";
+import NavbarFull from "../Utils/Nav/NavbarFull";
+import { useNavState, useNavStateUpdate } from '../Utils/Nav/NavContext'
 
 export default function Layout({ children }) {
 

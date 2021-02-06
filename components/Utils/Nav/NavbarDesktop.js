@@ -1,16 +1,16 @@
 import { motion } from "framer-motion"
-import DayNightToggle from './UI/DayNightToggle'
+import DayNightToggle from '../../UI/DayNightToggle'
 import React, { useState, useEffect } from 'react';
-import NavItems from './Utils/NavItemsDesktop'
+import NavItems from './NavItemsDesktop'
 export default function Navbar() {
     
     const [firstBounce, setFirstBounce] = useState(true)
 
-    useEffect(() => {
-        setTimeout(function() { 
-            setFirstBounce(false)
-        }, 3000);
-    }, []);
+    // useEffect(() => {
+    //     setTimeout(function() { 
+    //         setFirstBounce(false)
+    //     }, 3000);
+    // }, []);
 
     const LogoVarients = {
         hidden: {

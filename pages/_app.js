@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import { NavProvider } from '../components/Utils/NavContext'
+import { NavProvider } from '../components/Utils/Nav/NavContext'
 
 function MyApp({ Component, pageProps }) {
   return (

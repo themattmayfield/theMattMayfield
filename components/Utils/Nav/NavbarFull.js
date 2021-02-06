@@ -1,8 +1,8 @@
 import { motion } from "framer-motion"
 import { AnimatePresence } from 'framer-motion';
-import DayNightToggle from './UI/DayNightToggle'
-import NavItems from './Utils/NavItems'
-import { useNavState } from './Utils/NavContext'
+import DayNightToggle from '../../UI/DayNightToggle'
+import NavItems from './NavItems'
+import { useNavState } from './NavContext'
 
 export default function NavbarFull() {
     const navState = useNavState()

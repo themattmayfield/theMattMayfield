@@ -1,8 +1,8 @@
-import { useNavState, useNavStateUpdate } from './Utils/NavContext'
+import { useNavState, useNavStateUpdate } from './NavContext'
 import { motion } from "framer-motion"
 import React, { useState } from 'react';
-import Bars from './UI/Bars'
-import Times from './UI/Times'
+import Bars from '../../UI/Bars'
+import Times from '../../UI/Times'
 
 export default function Navbar() {
     const navState = useNavState()
