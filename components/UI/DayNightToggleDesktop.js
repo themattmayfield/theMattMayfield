@@ -5,17 +5,17 @@ import { useSpring, animated } from 'react-spring';
 
 
 
-const darkModeToggle = ({ mobile }) => {  
+const darkModeToggle = () => {  
 
   const Wrapper = styled(animated.div)`
  
 
   display: flex;
-  transform: ${({ mobile }) => (mobile ? 'scale(1)' : 'scale(0.7)')};
-  margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
-  margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
-  position: ${({ mobile }) => (mobile ? 'relative' : 'relative')};
-  right: ${({ mobile }) => (mobile ? null : '0')};
+  transform: scale(0.7);
+  margin: 0;
+  margin-right: 0.5rem;
+  position: relative;
+  right: 0;
 
   & input {
     position: absolute;
@@ -196,7 +196,7 @@ const Span = styled.span`
     }
     const darkMode = useDarkMode(false, darkModeConfig);
   return (
-    <Wrapper mobile={mobile} >
+    <Wrapper>
       <input
         type="checkbox"
         id="dn"

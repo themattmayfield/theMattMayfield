@@ -1,6 +1,5 @@
 import { motion } from "framer-motion"
 import { Link } from 'react-scroll';
-import { useNavState, useNavStateUpdate } from './NavContext'
 
 const navItems = [{
     text: 'About Me',
@@ -55,7 +54,7 @@ export default function NavItems(props) {
                     <motion.li
                         variants={NavItemsVarients}
                         initial="hidden"
-                        animate={props.animate}
+                        animate='visible'
                         custom={i}
                         key={i}
                         className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer ">
@@ -67,7 +66,7 @@ export default function NavItems(props) {
                     <motion.li
                         variants={NavItemsVarients}
                         initial="hidden"
-                        animate={props.animate}
+                        animate='visible'
                         custom={i}
                         key={i}
                         className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer ">

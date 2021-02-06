@@ -9,7 +9,9 @@ export default function Portfolio() {
 
     return (
         <>
-        <SectionWrapper id="portfolio" title="Portfolio">
+        <SectionWrapper id="portfolio" title="Portfolio" sub="Check out what I've been up to!">
+
+            
            
 
             <PortfolioItems />

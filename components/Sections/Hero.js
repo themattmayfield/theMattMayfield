@@ -85,7 +85,7 @@ export default function Hero() {
 
     return (
         <>
-            <div className="bg-transparent my-view pt-16 px-8 lg:px-24 container mx-auto flex flex-col justify-between"  id="hero">
+            <div className="bg-transparent my-view pt-16 px-8 lg:px-24 container max-w-7xl mx-auto flex flex-col justify-between"  id="hero">
                 <div></div>
 
                 <div className="space-y-2">

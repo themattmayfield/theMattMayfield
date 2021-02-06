@@ -31,13 +31,15 @@ const Items = [
 
 const filler = `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
 industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+ make a type specimen book. When an unknown printer took a galley of type and scrambled it to
+ make a type specimen book. When an unknown printer took a galley of type and scrambled it to
  make a type specimen book.`
 
 export default function PortfolioItems(props) {
 
   return (
     <>
-      <div className="flex flex-col space-y-32">
+      <div className="flex flex-col space-y-32 max-w-6xl mx-auto">
 
         {Items.map((item, i) => (
 
@@ -46,10 +48,10 @@ export default function PortfolioItems(props) {
             <div className={"lg:flex w-full justify-around text-center " + (i % 2 != 0 ? 'flex-row-reverse' : '')}>
               <PortfolioItem path={item.path} alt={item.alt} />
               <div className="flex flex-col my-auto space-y-6 lg:w-1/2">
-                <p className={"text-center " + (i % 2 != 0 ? 'lg:text-left' : 'lg:text-right')}>{filler}</p>
-                <div className="flex justify-center space-x-4">
-                  <Button>gnrtueigwbsl</Button>
-                  <Button>gnrtueigwbsl</Button>
+                <p className={"text-left"}>{filler}</p>
+                <div className="flex  space-x-4">
+                  <Button>View</Button>
+                  <Button>github</Button>
                 </div>
               </div>
             </div>

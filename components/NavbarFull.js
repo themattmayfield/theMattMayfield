@@ -30,10 +30,8 @@ export default function NavbarFull() {
                                 </ul>
 
                                 <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer">
-                                    <span className="ml-2">
-                                        <div className>
-                                    <DayNightToggle mobile />
-                                </div>
+                                    <span className="ml-2">                                        
+                                    <DayNightToggle mobile />                                
                                 </span></div>
                             </div>
 

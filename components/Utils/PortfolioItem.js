@@ -5,12 +5,12 @@ export default function PortfolioItem(props) {
 
     return (
         <>
-          <Image
+          <img
           className="rounded"
       src={props.path}
       alt={props.alt}
       width={500}
-      height={300}
+      height={293.44}
     />
         </>
     );
