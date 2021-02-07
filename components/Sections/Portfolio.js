@@ -7,10 +7,10 @@ export default function Portfolio() {
 
     return (
         <>
-            <SectionWrapper id="portfolio" title="Portfolio" sub="Check out what I've been up to!">
+            <SectionWrapper id="portfolio" title="Check out what I've been up to!" >
                 {Items.map((item, i) => (
                     <>
-                        <PortfolioItems path={item.path} title={item.title} alt={item.alt} filler={item.filler} index={i} />
+                        <PortfolioItems tech={item.tech} path={item.path} title={item.title} alt={item.alt} filler={item.filler} index={i} />
                     </>
                 ))}
             </SectionWrapper>

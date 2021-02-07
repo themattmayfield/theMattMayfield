@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import PortfolioItem from './PortfolioItem'
-import Button from '../../UI/Button'
+import PortfolioInfo from './portfolioInfo'
+import Image from "next/image"
 
 export default function PortfolioItems(props) {
   const controls = useAnimation();
@@ -24,28 +24,24 @@ export default function PortfolioItems(props) {
         hidden: { opacity: 0, scale: 0 }
   }
 
-  return (
-    
-      <div className="flex flex-col space-y-32 max-w-6xl mx-auto">        
-      <motion.div        
+  return (    
+   
+      <motion.div       
+      className={"mx-auto mb-20 lg:flex w-full justify-around text-center " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
       ref={ref}
       animate={controls}
       initial="hidden"
       transition={{ duration: 0.8 }}
-      variants={PortfolioItemVariation}>
-        <p className="text-center">{props.title}</p>
-        <div className={"lg:flex w-full justify-around text-center " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}>
-          <PortfolioItem path={props.path} alt={props.alt} />
-          <div className="flex flex-col my-auto space-y-6 lg:w-1/2">
-            <p className={"text-left"}>{props.filler}</p>
-            <div className="flex  space-x-4">
-              <Button>View</Button>
-              <Button>github</Button>
-            </div>
+      variants={PortfolioItemVariation}>          
+          
+          <Image className="transition duration-500 ease-in-out opacity-50 hover:opacity-100 cursor-pointer" width={579} height={360} src={props.path} alt={props.alt} />         
+          
+
+          <div className={"z-10 flex flex-col my-auto space-y-6 lg:w-1/2 "}>
+          <PortfolioInfo index={props.index} title={props.title} tech={props.tech} filler={props.filler}/>
           </div>
-        </div>
+        
       </motion.div>
-    
-      </div>    
+      
   );
 }

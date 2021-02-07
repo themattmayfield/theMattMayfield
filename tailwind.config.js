@@ -2,13 +2,14 @@ module.exports = {
   purge: ['./pages/**/*.js', './components/**/*.js'],
   darkMode: 'class',
   theme: {
-    extend: {
+    extend: {      
       colors: {
         'matt-dark': '#212121',
         'matt-darknav': 'rgba(33,33,33)',
         'matt-lightnav': 'rgba(255,255,255, .95)',
         'matt-textlight': '#F0F0F0',
-        'matt-textdark': '#333333'
+        'matt-textdark': '#333333',
+        'portfolioInfo': '#1c1c1c'
       },
       transitionProperty: {
         'height': 'height'
@@ -20,6 +21,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      backgroundOpacity: ['dark'],
       animation: ['hover', 'focus']
     },
   },
