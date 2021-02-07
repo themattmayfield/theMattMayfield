@@ -30,7 +30,7 @@ export default function Layout({ children }) {
       {/* <Navbar notOnePageSection={notOnePageSection} /> */}
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />        
         <meta name="viewport" content="width=device-width, minimal-ui"></meta>
       </Head>
 

@@ -85,7 +85,7 @@ export default function Hero() {
 
     return (
         <>
-            <div className="bg-transparent my-view pt-16 px-8 lg:px-24 container max-w-7xl mx-auto flex flex-col justify-between"  id="hero">
+            <div className="bg-transparent my-view pt-16 px-8 lg:px-24 container max-w-7xl mx-auto flex flex-col justify-between" id="hero">
                 <div></div>
 
                 <div className="space-y-2">
@@ -95,7 +95,11 @@ export default function Hero() {
                         animate={"visible"}
 
                     >
-                        <h1 className="text-matt-textdark dark:text-matt-textlight text-5xl lg:text-7xl font-thin">Hello 👋🏿 ,</h1>
+                        <h1 className="flex text-matt-textdark dark:text-matt-textlight text-5xl lg:text-7xl font-thin">Hello 
+                        <motion.span
+                        className="ml-1 cursor-pointer"
+                        whileTap={{ scale: .3 }}
+                            >👋🏿</motion.span>,</h1>
                         <h1 className="text-matt-textdark dark:text-matt-textlight text-5xl lg:text-7xl font-thin pb-4">I'm <span className="text-yellow-900 font-light">Matthew</span></h1>
                     </motion.div>
                     <motion.p
