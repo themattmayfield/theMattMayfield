@@ -25,23 +25,47 @@ export default function PortfolioItems(props) {
   }
 
   return (    
-   
+   <>
+   {props.mobile ?       
       <motion.div       
-      className={"mx-auto mb-20 lg:flex w-full justify-around text-center " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
+      className={"flex relative text-center mx-auto mb-64  w-full justify-around " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
       ref={ref}
       animate={controls}
       initial="hidden"
       transition={{ duration: 0.8 }}
       variants={PortfolioItemVariation}>          
           
-          <Image className="transition duration-500 ease-in-out opacity-50 hover:opacity-100 cursor-pointer" width={579} height={360} src={props.path} alt={props.alt} />         
+          <img className="w-full h-full transition duration-500 ease-in-out opacity-50 hover:opacity-100 cursor-pointer"  src={props.ImagePath} alt={props.alt} />         
+          
           
 
-          <div className={"z-10 flex flex-col my-auto space-y-6 lg:w-1/2 "}>
+          <div
+          className={"absolute pt-40 xs:pt-0 sm top-2/4 left-2/4 transform -translate-y-1/2 -translate-x-1/2 flex flex-col my-auto space-y-6 w-full"}>
           <PortfolioInfo index={props.index} title={props.title} tech={props.tech} filler={props.filler}/>
           </div>
         
       </motion.div>
-      
+:
+<motion.div       
+className={"flex mx-auto mb-20 items-center w-full justify-around text-center " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
+ref={ref}
+animate={controls}
+initial="hidden"
+transition={{ duration: 0.8 }}
+variants={PortfolioItemVariation}>          
+    
+    <div className="w-6/12">
+    <img className="transition duration-500 ease-in-out opacity-50 hover:opacity-100 cursor-pointer" src={props.ImagePath} alt={props.alt} /> 
+    </div>        
+    
+    
+    <div
+    className={"flex flex-col my-auto space-y-6 w-6/12 "}>
+    <PortfolioInfo index={props.index} title={props.title} tech={props.tech} filler={props.filler}/>
+    </div>
+  
+</motion.div>
+      }
+</>
   );
 }

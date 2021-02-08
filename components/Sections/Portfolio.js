@@ -10,7 +10,13 @@ export default function Portfolio() {
             <SectionWrapper id="portfolio" title="Check out what I've been up to!" >
                 {Items.map((item, i) => (
                     <>
-                        <PortfolioItems tech={item.tech} path={item.path} title={item.title} alt={item.alt} filler={item.filler} index={i} />
+                        <div className="lg:hidden pt-20">
+                        <PortfolioItems mobile={true} tech={item.tech} ImagePath={item.ImagePath} title={item.title} alt={item.alt} filler={item.filler} index={i} />
+                        </div>
+
+                        <div className="hidden lg:block">
+                        <PortfolioItems tech={item.tech} ImagePath={item.ImagePath} title={item.title} alt={item.alt} filler={item.filler} index={i} />
+                        </div>
                     </>
                 ))}
             </SectionWrapper>

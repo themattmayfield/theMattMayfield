@@ -1,13 +1,14 @@
+import { FiGithub, FiExternalLink } from 'react-icons/fi'
+
 export default function PortfolioInfo(props) {
 
-
     return (
-        <div className={"text-matt-textdark dark:text-matt-textlight font-light " + (props.index % 2 == 0 ? 'text-right' : 'text-left')}>
+        <div className={"text-matt-textdark dark:text-matt-textlight font-light p-6 " + (props.index % 2 == 0 ? 'text-right' : 'text-left')}>
             <p className="my-1 text-yellow-900 text-sm">Featured Project</p>
             <h3 className="text-2xl mb-4 font-medium">{props.title}</h3>
 
 
-            <div className="dark:bg-portfolioInfo bg-gray-200 bg-opacity-6  p-6 rounded">{props.filler}</div>
+            <div className="lg:dark:bg-portfolioInfo lg:bg-gray-200 lg:p-6 rounded text-sm md:text-base">{props.filler}</div>
 
             <ul className={"flex space-x-4 mt-5 mb-4 " + (props.index % 2 == 0 ? 'justify-end' : 'justify-start')}>
                 {props.tech.map((item, i) => (
@@ -15,7 +16,10 @@ export default function PortfolioInfo(props) {
                 ))}
             </ul>
 
-            <div>Links</div>
+            <div className={"flex space-x-5 " + (props.index % 2 == 0 ? 'justify-end' : 'justify-start')}>
+                <FiGithub className="w-6 h-6 hover:text-yellow-900 cursor-pointer" />
+                <FiExternalLink className="w-6 h-6 hover:text-yellow-900 cursor-pointer" />
+            </div>
         </div>
     );
 }
