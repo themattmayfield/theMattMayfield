@@ -28,7 +28,7 @@ export default function PortfolioItems(props) {
    <>
    {props.mobile ?       
       <motion.div       
-      className={"flex relative text-center mx-auto mb-64  w-full justify-around " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
+      className={"flex relative text-center mx-auto mb-48 xs:mb-20  w-full justify-around " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
       ref={ref}
       animate={controls}
       initial="hidden"
