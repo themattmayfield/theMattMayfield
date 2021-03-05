@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Link } from 'react-scroll';
 
 const navItems = [{
-    text: 'About Me',
+    text: 'Experience',
     path: 'about',
     id: 1
 },

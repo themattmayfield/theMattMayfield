@@ -29,9 +29,9 @@ export default function Layout({ children }) {
       {/* <SEO /> */}
       {/* <Navbar notOnePageSection={notOnePageSection} /> */}
       <Head>
-        <title>👋🏿 Matt Mayfield | Portfolio</title>
+        <title>Matt Mayfield | Portfolio</title>
         <meta property="og:title" content="👋🏿 Matt Mayfield | Portfolio" key="title" />
-        <link rel="icon" href="/favicon.ico" />        
+        <link rel="icon" href="/hand.png" />        
         <meta name="viewport" content="width=device-width, minimal-ui"></meta>
       </Head>
 

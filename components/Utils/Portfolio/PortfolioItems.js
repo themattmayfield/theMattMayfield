@@ -5,6 +5,7 @@ import PortfolioInfo from './portfolioInfo'
 import Image from "next/image"
 
 export default function PortfolioItems(props) {
+
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true
@@ -35,7 +36,7 @@ export default function PortfolioItems(props) {
       transition={{ duration: 0.8 }}
       variants={PortfolioItemVariation}>          
           
-          <img className="w-full h-full transition duration-500 ease-in-out opacity-50 hover:opacity-100 cursor-pointer"  src={props.ImagePath} alt={props.alt} />         
+          <img className="w-full h-full cursor-pointer"  src={props.ImagePath} alt={props.alt} />         
           
           
 
@@ -47,7 +48,7 @@ export default function PortfolioItems(props) {
       </motion.div>
 :
 <motion.div       
-className={"flex mx-auto mb-20 items-center w-full justify-around text-center " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
+className={"flex mx-auto mb-28 items-center w-full justify-around text-center " + (props.index % 2 != 0 ? 'flex-row-reverse' : '')}   
 ref={ref}
 animate={controls}
 initial="hidden"
@@ -55,7 +56,7 @@ transition={{ duration: 0.8 }}
 variants={PortfolioItemVariation}>          
     
     <div className="w-6/12">
-    <img className="transition duration-500 ease-in-out opacity-50 hover:opacity-100 cursor-pointer" src={props.ImagePath} alt={props.alt} /> 
+    <img className="cursor-pointer" src={props.ImagePath} alt={props.alt} /> 
     </div>        
     
     

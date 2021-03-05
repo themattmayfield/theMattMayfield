@@ -2,8 +2,8 @@
 export const Items = [
     {
         id: 0,
-        title: 'Work',
-        ImagePath: '/heroLight.png',
+        title: 'Lorem Ipsum',
+        ImagePath: '/drSnip.png',
         tech: ['Next.js', 'Framer Motion', 'Some 3rd Thing'],
         alt: 'Picture of the author',
         filler: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
@@ -14,7 +14,7 @@ industry's standard dummy text ever since the 1500s, when an unknown printer too
     },
     {
         id: 1,
-        title: 'Work',
+        title: 'Vivamus Metus',
         ImagePath: '/heroDark.png',
         tech: ['Next.js', 'Framer Motion', 'Some 3rd Thing'],
         alt: 'Picture of the author',
@@ -26,8 +26,8 @@ industry's standard dummy text ever since the 1500s, when an unknown printer too
     },
     {
         id: 2,
-        title: 'Work',
-        ImagePath: '/test.png',
+        title: 'Lorem Ipsum',
+        ImagePath: '/drSnip.png',
         tech: ['Next.js', 'Framer Motion', 'Some 3rd Thing'],
         alt: 'Picture of the author',
         filler: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 
@@ -38,8 +38,8 @@ industry's standard dummy text ever since the 1500s, when an unknown printer too
     },
     {
         id: 3,
-        title: 'Work',
-        ImagePath: '/heroLight.png',
+        title: 'Vivamus Metus',
+        ImagePath: '/drSnip.png',
         tech: ['Next.js', 'Framer Motion', 'Some 3rd Thing'],
         alt: 'Picture of the author',
         filler: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the 

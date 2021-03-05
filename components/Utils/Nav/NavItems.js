@@ -3,7 +3,7 @@ import { Link } from 'react-scroll';
 import { useNavState, useNavStateUpdate } from './NavContext'
 
 const navItems = [{
-    text: 'About Me',
+    text: 'Experience',
     path: 'about',
     id: 1
 },
