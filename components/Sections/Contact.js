@@ -7,7 +7,7 @@ export const Button = ({ children, ...props }) => {
   return (
     <button
       className={
-        "py-4 px-8 border border-yellow-900 rounded flex items-center " +
+        "px-4 py-2 md:py-4 md:px-8 border border-yellow-900 rounded flex items-center focus:outline-none " +
         props.class
       }
     >
@@ -20,8 +20,8 @@ export default function AboutMe(props) {
   return (
     <>
       <SectionWrapper id="contact" title="Get In Touch">
-        <div className="text-center w-full items-center mt-6">
-          <p className="mb-12 max-w-xl mx-auto text-lg">
+        <div className="text-center w-full items-center mt-6 mb-20">
+          <p className="mb-12 max-w-xl mx-auto text-base lg:text-lg">
             Although I'm not currently looking for any new opportunities, my
             inbox is always open. Whether you have a question or just want to
             say hi, I'll try my best to get back to you!
@@ -37,9 +37,11 @@ export default function AboutMe(props) {
               <BsCalendar className="ml-2 w-5 h-5" />
             </Button>
           </div>
+
+          <Socials />
         </div>
 
-        <Socials />
+        
       </SectionWrapper>
     </>
   );

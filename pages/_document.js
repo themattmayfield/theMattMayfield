@@ -11,6 +11,7 @@ class MyDocument extends Document {
       <Html>
         <Head />
         <body className="lg:overflow-scroll">
+        <script src="noflash.js" />
           <Main />
           <NextScript />
         </body>

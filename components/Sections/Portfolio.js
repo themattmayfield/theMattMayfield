@@ -30,11 +30,9 @@ return (
                 <div class="mt-12">
                 {Items.map((item, i) => (
                     <>
-                        <div className="lg:hidden">
-                        <PortfolioItems mobile={true} tech={item.tech} ImagePath={item.ImagePath} title={item.title} alt={item.alt} filler={item.filler} index={i} />
-                        </div>
+                        
 
-                        <div className="hidden lg:block">
+                        <div className={" " + (i == Items.length - 1 ? "mb-0" : "mb-20 lg:mb-40")}>
                         <PortfolioItems tech={item.tech} ImagePath={item.ImagePath} title={item.title} alt={item.alt} filler={item.filler} index={i} />
                         </div>
                     </>

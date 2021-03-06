@@ -34,7 +34,7 @@ export default function AboutMe() {
   return (
     <>
       <SectionWrapper id="about" title="">
-        <div className="mt-4 lg:mt-12 flex flex-col lg:flex-row items-center lg:justify-between justify-center lg:px-6 space-y-10 lg:space-y-0 lg:space-x-12">
+        <div className="mt-4 mb-20 lg:mt-12 flex flex-col lg:flex-row items-center lg:justify-between justify-center lg:px-6 space-y-10 lg:space-y-0 lg:space-x-12">
           <div class="w-60 sm:w-72 md:w-full text-center lg:text-left">
           <Image
             src="/me.png"
