@@ -3,13 +3,13 @@ import { Link } from 'react-scroll';
 import { useNavState, useNavStateUpdate } from './NavContext'
 
 const navItems = [{
-    text: 'Experience',
+    text: 'About',
     path: 'about',
     id: 1
 },
 {
-    text: 'Portfolio',
-    path: 'portfolio',
+    text: 'Tracks',
+    path: 'tracks',
     id: 2
 },
 {

@@ -2,13 +2,13 @@ import { motion } from "framer-motion"
 import { Link } from 'react-scroll';
 
 const navItems = [{
-    text: 'Experience',
+    text: 'About',
     path: 'about',
     id: 1
 },
 {
-    text: 'Portfolio',
-    path: 'portfolio',
+    text: 'Tracks',
+    path: 'tracks',
     id: 2
 },
 {
