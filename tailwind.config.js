@@ -1,35 +1,36 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ['./pages/**/*.js', './components/**/*.js'],
-  darkMode: 'class',
+  mode: "jit",
+  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
+  darkMode: "class",
   theme: {
     screens: {
-      'xs': '500px',
+      xs: "500px",
       ...defaultTheme.screens,
     },
-    extend: {      
+    extend: {
       colors: {
-        'matt-dark': '#212121',
-        'matt-darknav': 'rgba(33,33,33)',
-        'matt-lightnav': 'rgba(255,255,255, .95)',
-        'matt-textlight': '#F0F0F0',
-        'matt-textdark': '#333333',
-        'portfolioInfo': '#1c1c1c'
+        "matt-dark": "#212121",
+        "matt-darknav": "rgba(33,33,33)",
+        "matt-lightnav": "rgba(255,255,255, .95)",
+        "matt-textlight": "#F0F0F0",
+        "matt-textdark": "#333333",
+        portfolioInfo: "#1c1c1c",
       },
       transitionProperty: {
-        'height': 'height'
-       },
-       transitionDuration: {
-        '0': '0ms'
-       }
+        height: "height",
+      },
+      transitionDuration: {
+        0: "0ms",
+      },
     },
   },
   variants: {
     extend: {
-      backgroundOpacity: ['dark'],
-      animation: ['hover', 'focus']
+      backgroundOpacity: ["dark"],
+      animation: ["hover", "focus"],
     },
   },
   plugins: [],
-}
+};

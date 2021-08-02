@@ -35,13 +35,13 @@ export default function AboutMe() {
     <>
       <SectionWrapper id="about" title="">
         <div className="mt-4 mb-20 lg:mt-12 flex flex-col lg:flex-row items-center lg:justify-between justify-center lg:px-6 space-y-10 lg:space-y-0 lg:space-x-12">
-          <div class="w-60 sm:w-72 md:w-full text-center lg:text-left">
-          <Image
-            src="/me.png"
-            alt="Picture of the author"
-            width={350}
-            height={350}
-          />
+          <div className="w-60 sm:w-72 md:w-full text-center lg:text-left">
+            <Image
+              src="/me.png"
+              alt="Picture of the author"
+              width={350}
+              height={350}
+            />
           </div>
 
           <div className="max-w-2xl text-center">
@@ -59,6 +59,7 @@ export default function AboutMe() {
             <div className="flex items-center justify-center space-x-8">
               {Socials.map((social, i) => (
                 <a
+                  key={social.id}
                   className="no-underline rounded-full w-12 h-12 cursor-pointer flex items-center justify-center my-0"
                   rel="noreferrer"
                   target="_blank"

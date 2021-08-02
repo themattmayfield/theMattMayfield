@@ -28,8 +28,8 @@ export default function AboutMe(props) {
           </p>
 
           <div className="flex items-center space-x-4 justify-center mb-16">
-            <Button class="bg-yellow-900 text-white">
-              Say Hi<span class="ml-2">👋🏿</span>
+            <Button className="bg-yellow-900 text-white">
+              Say Hi<span className="ml-2">👋🏿</span>
             </Button>
 
             <Button>
@@ -40,8 +40,6 @@ export default function AboutMe(props) {
 
           <Socials />
         </div>
-
-        
       </SectionWrapper>
     </>
   );
