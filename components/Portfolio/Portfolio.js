@@ -19,7 +19,7 @@ export default function Portfolio() {
               className="w-full overflow-scroll"
             >
               <img
-                className="h-64 min-w-max cursor-pointer"
+                className="h-64 w-auto cursor-pointer"
                 src={
                   darkMode.value && i == 3 ? "/heroLight.png" : item.ImagePath
                 }
