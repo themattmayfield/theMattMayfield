@@ -1,5 +1,5 @@
 import querystring from "querystring";
-
+import axios from "axios";
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
 const refresh_token = process.env.NEXT_PUBLIC_SPOTIFY_REFRESH_TOKEN;
@@ -31,7 +31,7 @@ const getAccessToken = async () => {
 export const getNowPlaying = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch(NOW_PLAYING_ENDPOINT, {
+  return axios.get(NOW_PLAYING_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
@@ -41,7 +41,7 @@ export const getNowPlaying = async () => {
 export const getTopTracks = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch(TOP_TRACKS_ENDPOINT, {
+  return axios.get(TOP_TRACKS_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
@@ -51,7 +51,7 @@ export const getTopTracks = async () => {
 export const getRecentlyPlayed = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch(RECENTLY_PLAYED_ENDPOINT, {
+  return axios.get(RECENTLY_PLAYED_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },

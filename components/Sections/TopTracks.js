@@ -3,8 +3,12 @@ import React, { useState, useEffect } from "react";
 import SectionWrapper from "../Layouts/SectionWrapper";
 import Loading from "../UI/Loading";
 import Track from "../Tracks/Track";
-import axios from "axios";
 import { catchErrors } from "../../utils";
+import {
+  getTopTracksLong,
+  getTopTracksMedium,
+  getTopTracksShort,
+} from "../../utils/spotify";
 
 const classes = {
   active: "border-b border-white",
@@ -16,33 +20,26 @@ export default function Tracks() {
   const [activeRange, setActiveRange] = useState("long");
   const [amountToShow, setAmountToShow] = useState(5);
 
-  const apiCalls = async (range) => {
-    if (range == "long") {
-      const { data } = await axios.get("/api/top-tracks-long");
-      return data;
-    }
-    if (range == "medium") {
-      const { data } = await axios.get("/api/top-tracks-medium");
-      return data;
-    }
-    if (range == "short") {
-      const { data } = await axios.get("/api/top-tracks-short");
-      return data;
-    }
+  const apiCalls = {
+    long: getTopTracksLong(),
+    medium: getTopTracksMedium(),
+    short: getTopTracksShort(),
   };
 
   useEffect(() => {
     const fetchData = async () => {
-      const { data } = await axios.get("/api/top-tracks-long");
-      // console.log(data);
-      setTopTracks(data.items);
+      const response = await getTopTracksLong();
+      const { items } = await response.json();
+
+      setTopTracks(items);
     };
     catchErrors(fetchData());
   }, []);
 
   const changeRange = async (range) => {
-    const data = await apiCalls(range);
-    setTopTracks(data.items);
+    const response = await apiCalls[range];
+    const { items } = await response.json();
+    setTopTracks(items);
     setActiveRange(range);
   };
 
