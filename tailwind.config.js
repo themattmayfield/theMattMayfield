@@ -16,6 +16,7 @@ module.exports = {
         "matt-lightnav": "rgba(255,255,255, .95)",
         "matt-textlight": "#F0F0F0",
         "matt-textdark": "#333333",
+        "custom-darkgray": "#1B1B1B",
         portfolioInfo: "#1c1c1c",
       },
       transitionProperty: {

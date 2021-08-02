@@ -1,22 +1,19 @@
 import SectionWrapper from "../Layouts/SectionWrapper";
 import Socials from "../UI/Socials";
-import styled from "styled-components";
 import { BsCalendar } from "react-icons/bs";
 
-export const Button = ({ children, ...props }) => {
+export const Button = ({ children, className }) => {
   return (
     <button
-      className={
-        "px-4 py-2 md:py-4 md:px-8 border border-yellow-900 rounded flex items-center focus:outline-none " +
-        props.class
-      }
+      className={`
+        px-4 py-2 md:py-4 md:px-8 border border-yellow-900 rounded flex items-center focus:outline-none ${className}`}
     >
       {children}
     </button>
   );
 };
 
-export default function AboutMe(props) {
+export default function AboutMe() {
   return (
     <>
       <SectionWrapper id="contact" title="Get In Touch">
