@@ -54,7 +54,7 @@ export default function Tracks() {
     <>
       <SectionWrapper id="tracks">
         <div className="max-w-6xl mx-auto px-2 md:px-6  pt-10 md:pt-24">
-          <div className="w-full text-white pb-10 select-none flex flex-col md:flex-row items-center justify-between space-y-2 pr-4">
+          <div className="w-full  pb-10 select-none flex flex-col md:flex-row items-center justify-between space-y-2 pr-4">
             <div>
               <p className="text-2xl font-semibold">Top Tracks</p>
             </div>
@@ -89,7 +89,7 @@ export default function Tracks() {
             </div>
           </div>
           {topTracks ? (
-            <div className="flex flex-col gap-4 no-scrollbar text-white mb-[100px]">
+            <div className="flex flex-col gap-4 no-scrollbar  mb-[100px]">
               {topTracks.map(
                 (track, index) =>
                   index < amountToShow && <Track key={index} track={track} />
