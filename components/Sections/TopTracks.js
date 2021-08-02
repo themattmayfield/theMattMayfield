@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import SectionWrapper from "../Layouts/SectionWrapper";
-import Loading from "../Loading";
-import Track from "../Track";
+import Loading from "../UI/Loading";
+import Track from "../Tracks/Track";
 import axios from "axios";
-import { catchErrors } from "../Utils";
+import { catchErrors } from "../../utils";
 
 const classes = {
   active: "border-b border-white",
@@ -55,7 +55,7 @@ export default function Tracks() {
   };
   return (
     <>
-      <SectionWrapper>
+      <SectionWrapper id="tracks">
         <div className="max-w-6xl mx-auto px-2 md:px-6  pt-10 md:pt-24">
           <div className="w-full text-white pb-10 select-none flex flex-col md:flex-row items-center justify-between space-y-2 pr-4">
             <div>

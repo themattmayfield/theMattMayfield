@@ -1,4 +1,4 @@
-import { getTopTracksMedium } from "../../lib/spotify";
+import { getTopTracksMedium } from "../../utils/spotify";
 
 export default async (_, res) => {
   const response = await getTopTracksMedium();

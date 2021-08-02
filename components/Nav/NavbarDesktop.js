@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import DayNightToggle from "../../UI/DayNightToggle";
+import DayNightToggle from "../UI/DayNightToggle";
 import NavItems from "./NavItemsDesktop";
 export default function Navbar() {
   const LogoVarients = {

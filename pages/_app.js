@@ -1,12 +1,12 @@
-import '../styles/globals.css'
-import { NavProvider } from '../components/Utils/Nav/NavContext'
+import "../styles/globals.css";
+import { NavProvider } from "../components/Nav/NavContext";
 
 function MyApp({ Component, pageProps }) {
   return (
-  <NavProvider>
-    <Component {...pageProps} />
+    <NavProvider>
+      <Component {...pageProps} />
     </NavProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

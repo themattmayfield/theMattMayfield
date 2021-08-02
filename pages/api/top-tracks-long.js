@@ -1,4 +1,4 @@
-import { getTopTracksLong } from "../../lib/spotify";
+import { getTopTracksLong } from "../../utils/spotify";
 
 export default async (_, res) => {
   const response = await getTopTracksLong();
