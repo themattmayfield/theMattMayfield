@@ -133,9 +133,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          <div className="hidden md:block ">
-            <img className="md:h-60 lg:h-96" src="/anidef.png" />
-          </div>
+          <img className="hidden md:block md:h-60 lg:h-96" src="/anidef.png" />
         </div>
 
         <motion.div
