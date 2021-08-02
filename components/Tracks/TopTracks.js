@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import SectionWrapper from "../Layouts/SectionWrapper";
 import Loading from "../UI/Loading";
-import Track from "../Tracks/Track";
+import Track from "./Track";
 import { catchErrors } from "../../utils";
 import {
   getTopTracksLong,

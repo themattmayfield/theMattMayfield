@@ -8,19 +8,24 @@ const navItems = [
     id: 1,
   },
   {
+    text: "Portfolio",
+    path: "portfolio",
+    id: 2,
+  },
+  {
     text: "Tracks",
     path: "tracks",
-    id: 2,
+    id: 3,
   },
   {
     text: "Contact",
     path: "contact",
-    id: 3,
+    id: 4,
   },
   {
     text: "Buy Me ☕",
     path: "https://ko-fi.com/P5P21JZUH",
-    id: 4,
+    id: 5,
   },
 ];
 const NavItemsVarients = {
@@ -50,7 +55,7 @@ export default function NavItems(props) {
   return (
     <>
       {navItems.map((items, i) =>
-        items.id != 4 ? (
+        items.id != 5 ? (
           <Link key={items.id} to={items.path} spy={true} smooth={true}>
             <motion.li
               variants={NavItemsVarients}
