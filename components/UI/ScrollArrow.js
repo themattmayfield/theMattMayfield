@@ -12,13 +12,11 @@ const ScrollArrow = () => {
       setShowScroll(false);
     }
   };
-
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  typeof window !== "undefined" &&
+  if (process.browser) {
     window.addEventListener("scroll", checkScrollTop);
+  }
+  //   typeof window !== "undefined" &&
+  //   window.addEventListener("scroll", checkScrollTop);
 
   return (
     <div
@@ -27,10 +25,7 @@ const ScrollArrow = () => {
       }`}
     >
       <Link to="hero" spy={true} smooth={true}>
-        <div
-          // onClick={() => scrollTop()}
-          className="scrollTop cursor-pointer bg-matt-orange rounded-full w-6 h-6 flex items-center justify-center"
-        >
+        <div className="scrollTop cursor-pointer bg-matt-orange rounded-full w-6 h-6 flex items-center justify-center">
           <FaChevronUp className="text-xs text-white dark:text-matt-textdark" />
         </div>
       </Link>

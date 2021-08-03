@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { animateScroll as scroll } from 'react-scroll';
-import { animated } from 'react-spring';
+import React from "react";
+import styled from "styled-components";
+import { animateScroll as scroll } from "react-scroll";
+import { animated } from "react-spring";
+import { FaChevronUp } from "react-icons/fa";
 
 const StyledWrapper = styled(animated.div)`
   position: fixed;
@@ -30,26 +29,21 @@ const StyledWrapper = styled(animated.div)`
   &:active {
     transform: translateY(1px);
   }
-
-  @media ${({ theme }) => theme.mediaQueries.medium} {
-    width: 3rem;
-    height: 3rem;
-  }
-
-  @media ${({ theme }) => theme.mediaQueries.small} {
-    margin-bottom: 2rem;
-  }
 `;
 
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: var(--white);
-  font-size: 1.2rem;
-`;
+// const StyledIcon = styled(FontAwesomeIcon)`
+//   // color: var(--white);
+//   // font-size: 1.2rem;
+// `;
 
 const ScrollToTop = ({ style }) => {
   return (
-    <StyledWrapper style={style} onClick={() => scroll.scrollToTop()}>
-      <StyledIcon icon={faChevronUp} />
+    <StyledWrapper
+      className="w-5 h-5"
+      style={style}
+      onClick={() => scroll.scrollToTop()}
+    >
+      <FaChevronUp className="text-xs text-white dark:text-matt-textdark" />
     </StyledWrapper>
   );
 };
