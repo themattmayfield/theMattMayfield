@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronUp } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -25,12 +26,14 @@ const ScrollArrow = () => {
         showScroll ? "flex" : "hidden"
       }`}
     >
-      <div
-        onClick={scrollTop}
-        className="scrollTop cursor-pointer bg-matt-orange rounded-full w-6 h-6 flex items-center justify-center"
-      >
-        <FaChevronUp className="text-xs text-white dark:text-matt-textdark" />
-      </div>
+      <Link to="hero" spy={true} smooth={true}>
+        <div
+          // onClick={() => scrollTop()}
+          className="scrollTop cursor-pointer bg-matt-orange rounded-full w-6 h-6 flex items-center justify-center"
+        >
+          <FaChevronUp className="text-xs text-white dark:text-matt-textdark" />
+        </div>
+      </Link>
     </div>
   );
 };
