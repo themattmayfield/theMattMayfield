@@ -49,12 +49,30 @@ export default function AboutMe() {
               About Me
             </h2>
 
-            <p className="mb-8 text-lg">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
+            <div className="text-lg space-y-4 mb-8">
+              <p>
+                Hello 👋🏿 , I'm Matthew! I am a software developer 👨🏿‍💻 , fitness
+                enthusiast 💪🏿 , coffee connoisseur ☕ , boyfriend 💑🏾 , and
+                positivity spreader 💖 .{" "}
+              </p>
+              <p>
+                As soon as I printed "Hello World" for the first time 😲, I fell
+                in love with developing. Years ago, I became obsessed with doing
+                Project Euler problems 🧮, which helped shape my problem-solving
+                skills and intuitiveness 💡.{" "}
+              </p>
+              <p>
+                Later on, I got into web development and started creating simple
+                web pages with no frameworks 🤭 ! Fast forward a few more years,
+                and now I have created hundreds of web apps for different
+                companies using React and love it more and more each day ✨.{" "}
+              </p>
+              <p>
+                I love being outdoors 🤭 , improving my overall health and
+                wellness 🚴🏿‍♂️ , making coffee ♨️, and spending time with my loved
+                ones in my free time 💝!
+              </p>
+            </div>
 
             <div className="flex items-center justify-center space-x-8">
               {Socials.map((social, i) => (
