@@ -59,7 +59,7 @@ export default function Navbar() {
           </motion.a>
           <button
             onClick={scrollHandler}
-            className="text-yellow-900 cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
+            className="text-matt-orange cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
           >
             {navState ? (
               <Times animate={TimesAnimation} class="w-6 h-6" />

@@ -28,7 +28,7 @@ export default function NavbarFull() {
                   <NavItems animate={"visible"} />
                 </ul>
 
-                <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer">
+                <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer">
                   <span className="ml-2">
                     <DayNightToggle mobile={true} />
                   </span>

@@ -42,7 +42,7 @@ const SocialLink = () => {
       variants={SocialVarients}
       custom={i}
       key={i}
-      className="no-underline rounded-full border-2 border-yellow-900 w-12 h-12 cursor-pointer flex items-center justify-center my-0"
+      className="no-underline rounded-full border-2 border-matt-orange w-12 h-12 cursor-pointer flex items-center justify-center my-0"
       rel="noreferrer"
       target="_blank"
       aria-label={social.name}

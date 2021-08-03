@@ -63,7 +63,7 @@ export default function NavItems(props) {
               animate="visible"
               custom={i}
               key={i}
-              className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer "
+              className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "
             >
               <span className="ml-2">{items.text}</span>
             </motion.li>
@@ -76,7 +76,7 @@ export default function NavItems(props) {
               animate="visible"
               custom={i}
               key={i}
-              className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-yellow-900 text-matt-textdark hover:text-yellow-900 cursor-pointer "
+              className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "
             >
               <span className="ml-2">{items.text}</span>
             </motion.li>

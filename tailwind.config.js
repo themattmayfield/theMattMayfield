@@ -18,6 +18,7 @@ module.exports = {
         "matt-textdark": "#333333",
         "custom-darkgray": "#1B1B1B",
         "custom-lightgray": "#CECECE",
+        "matt-orange": "#F37620",
         portfolioInfo: "#1c1c1c",
       },
       transitionProperty: {

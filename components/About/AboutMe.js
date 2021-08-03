@@ -45,7 +45,7 @@ export default function AboutMe() {
           </div>
 
           <div className="max-w-2xl text-center">
-            <h2 className="text-yellow-900 uppercase w-full text-center text-base sm:text-2xl lg:text-4xl font-bold tracking-wide mb-6">
+            <h2 className="text-matt-orange uppercase w-full text-center text-base sm:text-2xl lg:text-4xl font-bold tracking-wide mb-6">
               About Me
             </h2>
 

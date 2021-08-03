@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const AboutMeButton = {
   hidden: {
@@ -11,21 +11,23 @@ const AboutMeButton = {
     transition: {
       delay: 1.06,
       y: {
-        duration: .35,
+        duration: 0.35,
         ease: "easeOut",
-      }
+      },
     },
-  }
-}
+  },
+};
 const Button = ({ children }) => (
-  <motion.button whileHover={{
-    scale: 1.07,
-    transition: {
-      type: "spring"
-    }
-  }}
+  <motion.button
+    whileHover={{
+      scale: 1.07,
+      transition: {
+        type: "spring",
+      },
+    }}
     exit="hidden"
-    className="rounded-full bg-yellow-900 py-2 px-6 text-white font-light focus:outline-none" >
+    className="rounded-full bg-matt-orange py-2 px-6 text-white font-light focus:outline-none"
+  >
     {children}
   </motion.button>
 );

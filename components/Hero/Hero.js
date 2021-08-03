@@ -103,7 +103,7 @@ export default function Hero() {
                 ,
               </h1>
               <h1 className="text-matt-textdark dark:text-matt-textlight text-5xl lg:text-7xl font-thin pb-4">
-                I'm <span className="text-yellow-900 font-light">Matthew</span>
+                I'm <span className="text-matt-orange font-light">Matthew</span>
               </h1>
             </motion.div>
             <motion.p
@@ -126,7 +126,7 @@ export default function Hero() {
                   },
                 }}
                 exit="hidden"
-                className=" rounded-full bg-yellow-900 py-2 px-6 text-white font-light focus:outline-none"
+                className=" rounded-full bg-matt-orange py-2 px-6 text-white font-light focus:outline-none"
               >
                 About Me
               </motion.button>
@@ -145,7 +145,7 @@ export default function Hero() {
           <Link to="about" spy={true} smooth={true}>
             <ChevronDown
               whileHover={hoverAnimation}
-              class="w-6 h-6 cursor-pointer text-yellow-900"
+              class="w-6 h-6 cursor-pointer text-matt-orange"
             />
           </Link>
         </motion.div>

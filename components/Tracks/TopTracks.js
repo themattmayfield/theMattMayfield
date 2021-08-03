@@ -11,7 +11,7 @@ import {
 } from "../../utils/spotify";
 
 const classes = {
-  active: "border-b border-white",
+  active: "border-b border-matt-textdark dark:border-white",
   inactive: "border-b border-transparent",
 };
 
@@ -96,7 +96,7 @@ export default function Tracks() {
               )}
               <p
                 onClick={() => amountToShowHandler()}
-                class="text-center text-yellow-900 text-lg cursor-pointer"
+                class="text-center text-matt-orange text-lg cursor-pointer"
               >
                 {amountToShow >= 49 ? "Show Less" : "Show More"}
               </p>
