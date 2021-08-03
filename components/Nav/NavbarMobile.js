@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Bars from "../UI/Bars";
 import Times from "../UI/Times";
+import { Link } from "react-scroll";
 
 export default function Navbar() {
   const navState = useNavState();
@@ -48,15 +49,16 @@ export default function Navbar() {
         }
       >
         <div className="px-4 mx-auto w-full relative flex items-center justify-between ">
-          <motion.a
-            variants={LogoVarients}
-            initial="post"
-            animate={headerBounce ? "visible" : "post"}
-            className="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-matt-textlight text-matt-textdark"
-            href="/"
-          >
-            Matthew Mayfield
-          </motion.a>
+          <Link to={"hero"} spy={true} smooth={true}>
+            <motion.p
+              variants={LogoVarients}
+              initial="post"
+              animate={headerBounce ? "visible" : "post"}
+              className="cursor-pointer text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-no-wrap uppercase dark:text-matt-textlight text-matt-textdark"
+            >
+              Matthew Mayfield
+            </motion.p>
+          </Link>
           <button
             onClick={scrollHandler}
             className="text-matt-orange cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
