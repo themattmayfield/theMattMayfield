@@ -96,7 +96,7 @@ export default function Tracks() {
               )}
               <p
                 onClick={() => amountToShowHandler()}
-                class="text-center text-matt-orange text-lg cursor-pointer"
+                class="text-center text-matt-orange text-xs sm:text-base md:text-lg cursor-pointer"
               >
                 {amountToShow >= 49 ? "Show Less" : "Show More"}
               </p>

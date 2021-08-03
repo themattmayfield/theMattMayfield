@@ -34,8 +34,8 @@ export default function AboutMe() {
   return (
     <>
       <SectionWrapper id="about" title="">
-        <div className="mt-4 mb-20 lg:mt-12 flex flex-col lg:flex-row items-center lg:justify-between justify-center lg:px-6 space-y-10 lg:space-y-0 lg:space-x-12">
-          <div className="w-60 sm:w-72 md:w-full text-center lg:text-left">
+        <div className="sm:mt-4 mb-20 lg:mt-12 flex flex-col lg:flex-row items-center lg:justify-between justify-center lg:px-6 space-y-10 lg:space-y-0 lg:space-x-12">
+          <div className="w-40 sm:w-72 md:w-full text-center lg:text-left">
             <Image
               src="/me.png"
               alt="Picture of the author"
@@ -45,11 +45,11 @@ export default function AboutMe() {
           </div>
 
           <div className="max-w-2xl text-center">
-            <h2 className="text-matt-orange uppercase w-full text-center text-base sm:text-2xl lg:text-4xl font-bold tracking-wide mb-6">
+            <h2 className="text-matt-orange uppercase w-full text-center text-base sm:text-2xl lg:text-4xl font-bold tracking-wide mb-4 sm:mb-6">
               About Me
             </h2>
 
-            <div className="text-lg space-y-4 mb-8">
+            <div className="text-sm sm:text-lg space-y-3 sm:space-y-4 mb-4 sm:mb-8">
               <p>
                 Hello 👋🏿 , I'm Matthew! I am a software developer 👨🏿‍💻 , fitness
                 enthusiast 💪🏿 , coffee connoisseur ☕ , boyfriend 💑🏾 , and

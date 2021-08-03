@@ -16,7 +16,10 @@ export const Button = ({ children, className }) => {
 export default function AboutMe() {
   return (
     <>
-      <SectionWrapper id="contact" title="Get In Touch">
+      <SectionWrapper id="contact">
+        <h2 className="text-matt-orange uppercase w-full text-center text-base sm:text-2xl lg:text-4xl font-bold tracking-wide mb-4 sm:mb-6">
+          Get In Touch
+        </h2>
         <div className="text-center w-full items-center mt-6 mb-20">
           <p className="mb-12 max-w-xl mx-auto text-base lg:text-lg">
             Although I'm not currently looking for any new opportunities, my
