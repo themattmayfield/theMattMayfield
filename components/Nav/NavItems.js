@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import { useNavState, useNavStateUpdate } from "./NavContext";
 
 const navItems = [
   {
@@ -52,17 +51,14 @@ const NavItemsVarients = {
   }),
 };
 
-export default function NavItems(props) {
-  const navState = useNavState();
-  const scrollHandler = useNavStateUpdate();
-
+export default function NavItems({ animate, setOpen }) {
   return (
     <>
       {navItems.map((items, i) =>
         items.id != 5 ? (
           <Link
             key={items.id}
-            onClick={scrollHandler}
+            onClick={() => setOpen(false)}
             to={items.path}
             spy={true}
             smooth={true}
@@ -70,7 +66,7 @@ export default function NavItems(props) {
             <motion.li
               variants={NavItemsVarients}
               initial="hidden"
-              animate={props.animate}
+              animate={animate}
               custom={i}
               key={i}
               className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "
@@ -83,7 +79,7 @@ export default function NavItems(props) {
             <motion.li
               variants={NavItemsVarients}
               initial="hidden"
-              animate={props.animate}
+              animate={animate}
               custom={i}
               key={i}
               className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "

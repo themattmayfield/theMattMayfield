@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
-export default function Bars(props) {
+export default function Bars({ className }) {
   return (
     <>
       <motion.svg
-        className={props.class}
+        className={className}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

@@ -1,14 +1,10 @@
-import { useNavState, useNavStateUpdate } from "./NavContext";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Bars from "../UI/Bars";
 import Times from "../UI/Times";
 import { Link } from "react-scroll";
 
-export default function Navbar() {
-  const navState = useNavState();
-  const scrollHandler = useNavStateUpdate();
-
+export default function Navbar({ open, setOpen }) {
   const [headerBounce, setHeaderBounce] = useState(true);
 
   setTimeout(() => {
@@ -60,13 +56,13 @@ export default function Navbar() {
             </motion.p>
           </Link>
           <button
-            onClick={scrollHandler}
+            onClick={() => setOpen((prevState) => !prevState)}
             className="text-matt-orange cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block outline-none focus:outline-none"
           >
-            {navState ? (
-              <Times animate={TimesAnimation} class="w-6 h-6" />
+            {open ? (
+              <Times animate={TimesAnimation} className="w-6 h-6" />
             ) : (
-              <Bars class="w-6 h-6" />
+              <Bars className="w-6 h-6" />
             )}
           </button>
         </div>

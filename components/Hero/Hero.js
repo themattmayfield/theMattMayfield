@@ -84,7 +84,7 @@ export default function Hero() {
   return (
     <>
       <div
-        className="bg-transparent my-view pt-16 pl-8 lg:pl-24 container max-w-7xl mx-auto flex flex-col justify-between"
+        className="bg-transparent h-screen pt-16 pl-8 lg:pl-24 container max-w-7xl mx-auto flex flex-col justify-between"
         id="hero"
       >
         <div></div>
@@ -110,7 +110,7 @@ export default function Hero() {
               variants={hypeTextAnimation}
               initial="hidden"
               animate="visible"
-              className="text-matt-textdark dark:text-matt-textlight text-base lg:text-xl font-extralight pb-10 "
+              className="text-matt-textdark dark:text-matt-textlight text-base lg:text-xl font-semibold w-full relative inline-block text-center italic transition ease-out duration-100 pb-10 "
             >
               <WordsFading />
             </motion.p>
@@ -126,7 +126,7 @@ export default function Hero() {
                   },
                 }}
                 exit="hidden"
-                className=" rounded-full bg-matt-orange py-2 px-6 text-white font-light focus:outline-none"
+                className="mt-4 rounded-full bg-matt-orange py-2 px-6 text-white font-light focus:outline-none"
               >
                 About Me
               </motion.button>
@@ -145,7 +145,7 @@ export default function Hero() {
           <Link to="about" spy={true} smooth={true}>
             <ChevronDown
               whileHover={hoverAnimation}
-              class="w-6 h-6 cursor-pointer text-matt-orange"
+              className="w-6 h-6 cursor-pointer text-matt-orange"
             />
           </Link>
         </motion.div>

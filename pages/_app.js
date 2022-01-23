@@ -1,12 +1,10 @@
-import "antd/dist/antd.css";
 import "../styles/globals.css";
-import { NavProvider } from "../components/Nav/NavContext";
-
+import { ThemeProvider } from "next-themes";
 function MyApp({ Component, pageProps }) {
   return (
-    <NavProvider>
+    <ThemeProvider enableSystem attribute="class">
       <Component {...pageProps} />
-    </NavProvider>
+    </ThemeProvider>
   );
 }
 

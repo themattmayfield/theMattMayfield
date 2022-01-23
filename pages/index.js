@@ -4,7 +4,6 @@ import AboutMe from "@/components/About/AboutMe";
 import Portfolio from "@/components/Portfolio/Portfolio";
 import Contact from "@/components/Contact/Contact";
 import TopTracks from "@/components/Tracks/TopTracks";
-// import ScrollTop from "@/components/UI/ScrollArrow";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Portfolio />
       <TopTracks />
       <Contact />
-      {/* <ScrollTop /> */}
     </Layout>
   );
 }

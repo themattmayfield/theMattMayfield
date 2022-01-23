@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import DayNightToggle from "../UI/DayNightToggle";
 import NavItems from "./NavItems";
-import { useNavState } from "./NavContext";
+import { useLockBodyScroll } from "@/utils/hooks";
 
-export default function NavbarFull() {
-  const navState = useNavState();
+export default function NavbarFull({ open, setOpen }) {
+  useLockBodyScroll();
 
   const MainDivVarients = {
     open: { x: 0, opacity: 1, transition: { duration: 0.3 } },
@@ -15,17 +15,17 @@ export default function NavbarFull() {
   return (
     <>
       <AnimatePresence>
-        {navState && (
+        {open && (
           <>
             <motion.div
               variants={MainDivVarients}
               animate={"open"}
               exit={"closed"}
-              className="lg:hidden my-view fixed w-full z-10"
+              className="lg:hidden h-screen fixed w-full z-10"
             >
-              <div className="flex flex-col my-view relative w-full">
-                <ul className="space-y-6 flex flex-col my-view justify-center items-center list-none ">
-                  <NavItems animate={"visible"} />
+              <div className="flex flex-col h-full relative w-full">
+                <ul className="space-y-6 flex flex-col h-full justify-center items-center list-none ">
+                  <NavItems setOpen={setOpen} animate={"visible"} />
                 </ul>
 
                 <div className="px-3 py-4 mx-auto text-xs uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer">

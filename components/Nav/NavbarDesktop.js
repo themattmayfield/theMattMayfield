@@ -69,7 +69,7 @@ export default function Navbar() {
               animate="visible"
               className="flex ml-2"
             >
-              <DayNightToggle />
+              <DayNightToggle mobile={false} />
             </motion.div>
           </div>
         </div>

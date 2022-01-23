@@ -1,4 +1,3 @@
-import querystring from "querystring";
 import axios from "axios";
 const client_id = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID;
 const client_secret = process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_SECRET;
@@ -20,7 +19,7 @@ const getAccessToken = async () => {
       Authorization: `Basic ${basic}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
-    body: querystring.stringify({
+    body: new URLSearchParams({
       grant_type: "refresh_token",
       refresh_token,
     }),

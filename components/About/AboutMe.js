@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { FaGithub, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 
-const Socials = [
+const socials = [
   {
     name: "Github",
     path: "https://github.com/theMattMayfield",
@@ -75,7 +75,7 @@ export default function AboutMe() {
             </div>
 
             <div className="flex items-center justify-center space-x-8">
-              {Socials.map((social, i) => (
+              {socials.map((social) => (
                 <a
                   key={social.id}
                   className="no-underline rounded-full w-12 h-12 cursor-pointer flex items-center justify-center my-0"

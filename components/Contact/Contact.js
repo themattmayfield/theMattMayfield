@@ -2,17 +2,6 @@ import SectionWrapper from "../Layouts/SectionWrapper";
 import Socials from "../UI/Socials";
 import { BsCalendar } from "react-icons/bs";
 
-export const Button = ({ children, className }) => {
-  return (
-    <button
-      className={`
-        px-4 py-2 md:py-4 md:px-8 border border-matt-orange rounded flex items-center focus:outline-none ${className}`}
-    >
-      {children}
-    </button>
-  );
-};
-
 export default function AboutMe() {
   return (
     <>
@@ -28,7 +17,7 @@ export default function AboutMe() {
           </p>
 
           <div className="flex items-center space-x-4 justify-center mb-16">
-            <Button className="bg-matt-orange text-white">
+            <Button className="bg-matt-orange">
               Say Hi<span className="ml-2">👋🏿</span>
             </Button>
 
@@ -44,3 +33,14 @@ export default function AboutMe() {
     </>
   );
 }
+
+const Button = ({ children, className }) => {
+  return (
+    <button
+      className={`
+        px-4 py-2 md:py-4 md:px-8 border border-matt-orange rounded flex items-center focus:outline-none ${className}`}
+    >
+      {children}
+    </button>
+  );
+};
