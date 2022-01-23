@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import { Socials } from "../../utils/socials";
+import { Socials } from "utils/socials";
 const SocialVarients = {
   hidden: {
     opacity: 0,
@@ -14,7 +14,8 @@ const SocialVarients = {
       delay: i * 0.05 + 0.3,
       y: {
         duration: i * 0.05 + 0.3,
-        yoyo: 2,
+        repeat: 2,
+        repeatType: "reverse",
         ease: "easeOut",
       },
     },

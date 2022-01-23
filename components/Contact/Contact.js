@@ -1,5 +1,5 @@
-import SectionWrapper from "../Layouts/SectionWrapper";
-import Socials from "../UI/Socials";
+import SectionWrapper from "components/Layouts/SectionWrapper";
+import Socials from "components/Socials";
 import { BsCalendar } from "react-icons/bs";
 
 export default function AboutMe() {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { animated, useTransition, config } from "react-spring";
 
 const WORDS = [
@@ -8,7 +8,6 @@ const WORDS = [
 ];
 
 const wordsFading = () => {
-  // Subtitle keywords loop
   const [index, setIndex] = useState(0);
   const wordsTransition = useTransition(WORDS[index], (span) => span.id, {
     config: config.stiff,
@@ -32,14 +31,20 @@ const wordsFading = () => {
     },
   });
 
-  useEffect(
-    () =>
+  const _isMounted = useRef(true);
+
+  useEffect(() => {
+    if (_isMounted.current) {
       void setInterval(
         () => setIndex((current) => (current + 1) % WORDS.length),
         2500
-      ),
-    []
-  );
+      );
+    }
+
+    return () => {
+      _isMounted.current = false;
+    };
+  }, []);
 
   return wordsTransition.map(({ item, props, key }) => (
     <animated.span key={key} style={props}>

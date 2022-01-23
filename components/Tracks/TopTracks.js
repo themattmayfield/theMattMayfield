@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import SectionWrapper from "../Layouts/SectionWrapper";
-import Loading from "../UI/Loading";
+import SectionWrapper from "components/Layouts/SectionWrapper";
 import Track from "./Track";
-import { catchErrors } from "../../utils";
+import { catchErrors } from "utils";
 import {
   getTopTracksLong,
   getTopTracksMedium,
   getTopTracksShort,
-} from "../../utils/spotify";
+} from "utils/spotify";
+import dynamic from "next/dynamic";
+
+// This is to prevent the loading component from ssr and throwing 'classname mismatch' error
+const Loading = dynamic(() => import("components/Loading"), { ssr: false });
 
 export default function Tracks() {
   const [topTracks, setTopTracks] = useState([]);

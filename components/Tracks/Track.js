@@ -7,7 +7,6 @@ export default function Track({ track }) {
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
 
-  console.log(track);
   return (
     <div className="flex items-center justify-between  cursor-pointer transition duration-150 ease-in-out hover:bg-custom-lightgray dark:hover:bg-custom-darkgray pr-4">
       <div className="flex space-x-6 items-center">

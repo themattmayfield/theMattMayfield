@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import Bars from "../UI/Bars";
-import Times from "../UI/Times";
+import Bars from "components/Bars";
+import Times from "components/Times";
 import { Link } from "react-scroll";
 
 export default function Navbar({ open, setOpen }) {
@@ -23,7 +23,8 @@ export default function Navbar({ open, setOpen }) {
         delay: 0.3,
         y: {
           duration: 0.3,
-          yoyo: 2,
+          repeat: 2,
+          repeatType: "reverse",
           ease: "easeOut",
         },
       },

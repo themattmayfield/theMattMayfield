@@ -1,6 +1,5 @@
-import SectionWrapper from "../Layouts/SectionWrapper";
-import Image from "next/image";
-
+import SectionWrapper from "components/Layouts/SectionWrapper";
+import BlurImage from "components/BlurImage";
 import { FaGithub, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 
 const socials = [
@@ -36,7 +35,7 @@ export default function AboutMe() {
       <SectionWrapper id="about" title="">
         <div className="sm:mt-4 mb-20 lg:mt-12 flex flex-col lg:flex-row items-center lg:justify-between justify-center lg:px-6 space-y-10 lg:space-y-0 lg:space-x-12">
           <div className="w-40 sm:w-72 md:w-full text-center lg:text-left">
-            <Image
+            <BlurImage
               src="/me.png"
               alt="Picture of the author"
               width={350}
@@ -52,8 +51,8 @@ export default function AboutMe() {
             <div className="text-sm sm:text-lg space-y-3 sm:space-y-4 mb-4 sm:mb-8">
               <p>
                 Hello 👋🏿 , I'm Matthew! I am a software developer 👨🏿‍💻 , fitness
-                enthusiast 💪🏿 , coffee connoisseur ☕ , boyfriend 💑🏾 , and
-                positivity spreader 💖 .{" "}
+                enthusiast 💪🏿 , coffee connoisseur ☕ , and positivity spreader
+                💖 .{" "}
               </p>
               <p>
                 As soon as I printed "Hello World" for the first time 😲, I fell

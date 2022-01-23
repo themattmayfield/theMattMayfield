@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
-import DayNightToggle from "../UI/DayNightToggle";
+import DayNightToggle from "components/DayNightToggle";
 import NavItems from "./NavItems";
-import { useLockBodyScroll } from "@/utils/hooks";
+import { useLockBodyScroll } from "utils/hooks";
 
 export default function NavbarFull({ open, setOpen }) {
   useLockBodyScroll();
@@ -21,7 +21,7 @@ export default function NavbarFull({ open, setOpen }) {
               variants={MainDivVarients}
               animate={"open"}
               exit={"closed"}
-              className="lg:hidden h-screen fixed w-full z-10"
+              className="lg:hidden my-view fixed w-full z-10"
             >
               <div className="flex flex-col h-full relative w-full">
                 <ul className="space-y-6 flex flex-col h-full justify-center items-center list-none ">

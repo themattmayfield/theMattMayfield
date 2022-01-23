@@ -1,10 +1,5 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@/components/*": ["components/*"],
-        "@/utils/*": ["utils/*"],
-        "@/assets/*": ["assets/*"]
-      }
-    }
+  "compilerOptions": {
+    "baseUrl": "."
   }
+}

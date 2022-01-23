@@ -44,7 +44,8 @@ const NavItemsVarients = {
       delay: i * 0.05 + 0.3,
       y: {
         duration: i * 0.05 + 0.3,
-        yoyo: 2,
+        repeat: 2,
+        repeatType: "reverse",
         ease: "easeOut",
       },
     },

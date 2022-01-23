@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react";
-import SectionWrapper from "../Layouts/SectionWrapper";
+import SectionWrapper from "components/Layouts/SectionWrapper";
 import _ from "lodash";
 import { Items } from "./ItemObject";
-import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
 export default function Portfolio() {
-  const router = useRouter();
   const { systemTheme, theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    console.clear();
-    console.log("Hi SURE! Hope you enjoy 😀 - MATT");
     setMounted(true);
   }, []);
 

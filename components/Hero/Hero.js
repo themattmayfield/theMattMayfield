@@ -1,7 +1,8 @@
-import ChevronDown from "../UI/ChevronDown";
+import ChevronDown from "components/ChevronDown";
 import { motion } from "framer-motion";
-import WordsFading from "../UI/WordsFading";
+import WordsFading from "components/WordsFading";
 import { Link } from "react-scroll";
+import BlurImage from "components/BlurImage";
 
 export default function Hero() {
   const Hello = {
@@ -16,7 +17,8 @@ export default function Hero() {
         delay: 0.35,
         x: {
           duration: 0.35,
-          yoyo: 2,
+          repeat: 2,
+          repeatType: "reverse",
           ease: "easeOut",
         },
       },
@@ -84,13 +86,13 @@ export default function Hero() {
   return (
     <>
       <div
-        className="bg-transparent h-screen pt-16 pl-8 lg:pl-24 container max-w-7xl mx-auto flex flex-col justify-between"
+        className="bg-transparent my-view pt-16 pl-8 lg:pl-24 container max-w-7xl mx-auto flex flex-col justify-between"
         id="hero"
       >
         <div></div>
 
         <div className="md:flex items-center justify-between">
-          <div className="space-y-2">
+          <div className="space-y-2 flex-shrink-0">
             <motion.div variants={Hello} initial={"hidden"} animate={"visible"}>
               <h1 className="flex text-matt-textdark dark:text-matt-textlight text-5xl lg:text-7xl font-thin">
                 Hello
@@ -133,7 +135,15 @@ export default function Hero() {
             </Link>
           </div>
 
-          <img className="hidden md:block md:h-60 lg:h-96" src="/anidef.png" />
+          <div className="relative hidden md:block md:h-60 lg:h-96 w-full">
+            <BlurImage
+              className="hidden md:block"
+              src="/anidef.png"
+              layout="fill"
+              objectFit="contain"
+              priority={true}
+            />
+          </div>
         </div>
 
         <motion.div

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import DayNightToggle from "../UI/DayNightToggle";
+import DayNightToggle from "components/DayNightToggle";
 import NavItems from "./NavItemsDesktop";
 import { Link } from "react-scroll";
 
@@ -16,7 +16,8 @@ export default function Navbar() {
         delay: 0.3,
         y: {
           duration: 0.3,
-          yoyo: 2,
+          repeat: 2,
+          repeatType: "reverse",
           ease: "easeOut",
         },
       },
@@ -35,7 +36,8 @@ export default function Navbar() {
         delay: 4 * 0.05 + 0.3,
         y: {
           duration: 4 * 0.05 + 0.3,
-          yoyo: 2,
+          repeat: 2,
+          repeatType: "reverse",
           ease: "easeOut",
         },
       },
