@@ -47,7 +47,6 @@ export default function Navbar() {
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
             <Link to={"hero"} spy={true} smooth={true}>
-              {" "}
               <motion.p
                 variants={LogoVarients}
                 initial="hidden"

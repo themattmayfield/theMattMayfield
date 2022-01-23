@@ -1,12 +1,25 @@
+import { useState, useEffect } from "react";
 import SectionWrapper from "../Layouts/SectionWrapper";
 import _ from "lodash";
 import { Items } from "./ItemObject";
 import { useRouter } from "next/router";
-import useDarkMode from "use-dark-mode";
+import { useTheme } from "next-themes";
 import Link from "next/link";
+
 export default function Portfolio() {
   const router = useRouter();
-  const darkMode = useDarkMode();
+  const { systemTheme, theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    console.clear();
+    console.log("Hi SURE! Hope you enjoy 😀 - MATT");
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const currentTheme = theme === "system" ? systemTheme : theme;
 
   return (
     <SectionWrapper id="portfolio">
@@ -22,7 +35,11 @@ export default function Portfolio() {
           >
             <img
               className="h-64 w-auto cursor-pointer"
-              src={darkMode.value && i == 3 ? "/heroLight.png" : item.ImagePath}
+              src={
+                currentTheme === "dark" && i == 3
+                  ? "/heroLight.png"
+                  : item.ImagePath
+              }
             />
           </Link>
         ))}

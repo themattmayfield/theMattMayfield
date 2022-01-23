@@ -75,9 +75,6 @@ export const parsePitchClass = (note) => {
   return key;
 };
 
-export const formatWithCommas = (n) =>
-  n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-
 // Higher-order function for async/await error handling
 export const catchErrors = (fn) =>
   function (...args) {
