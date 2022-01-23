@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import DayNightToggle from "components/DayNightToggle";
 import NavItems from "./NavItems";
-import { useLockBodyScroll } from "utils/hooks";
+import { useLockBodyScroll } from "utils/bodyLock";
 
 export default function NavbarFull({ open, setOpen }) {
   useLockBodyScroll();

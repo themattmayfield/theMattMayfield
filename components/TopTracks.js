@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SectionWrapper from "components/Layouts/SectionWrapper";
+import SectionWrapper from "components/SectionWrapper";
 import Track from "./Track";
-import { catchErrors } from "utils";
+import catchErrors from "utils/catchErrors";
 import {
   getTopTracksLong,
   getTopTracksMedium,

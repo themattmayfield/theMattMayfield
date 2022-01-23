@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
-import { Socials } from "utils/socials";
+import socials from "utils/socials";
 const SocialVarients = {
   hidden: {
     opacity: 0,
@@ -34,7 +34,7 @@ const SocialLink = () => {
     }
   }, [controls, inView]);
 
-  return Socials.map((social, i) => (
+  return socials.map((social, i) => (
     <motion.a
       ref={ref}
       animate={controls}

@@ -1,4 +1,4 @@
-import SectionWrapper from "components/Layouts/SectionWrapper";
+import SectionWrapper from "components/SectionWrapper";
 import BlurImage from "components/BlurImage";
 import { FaGithub, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 

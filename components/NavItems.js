@@ -1,33 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import navItems from "lib/navItems";
 
-const navItems = [
-  {
-    text: "About",
-    path: "about",
-    id: 1,
-  },
-  {
-    text: "Portfolio",
-    path: "portfolio",
-    id: 2,
-  },
-  {
-    text: "Tracks",
-    path: "tracks",
-    id: 3,
-  },
-  {
-    text: "Contact",
-    path: "contact",
-    id: 4,
-  },
-  {
-    text: "Buy Me ☕",
-    path: "https://ko-fi.com/P5P21JZUH",
-    id: 5,
-  },
-];
 const NavItemsVarients = {
   hidden: {
     opacity: 0,
@@ -52,14 +26,14 @@ const NavItemsVarients = {
   }),
 };
 
-export default function NavItems({ animate, setOpen }) {
+export default function NavItems({ animate, setOpen, desktop }) {
   return (
     <>
       {navItems.map((items, i) =>
         items.id != 5 ? (
           <Link
+            onClick={() => (desktop ? null : setOpen(false))}
             key={items.id}
-            onClick={() => setOpen(false)}
             to={items.path}
             spy={true}
             smooth={true}
@@ -67,7 +41,7 @@ export default function NavItems({ animate, setOpen }) {
             <motion.li
               variants={NavItemsVarients}
               initial="hidden"
-              animate={animate}
+              animate={desktop ? "visible" : animate}
               custom={i}
               key={i}
               className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "
@@ -80,7 +54,7 @@ export default function NavItems({ animate, setOpen }) {
             <motion.li
               variants={NavItemsVarients}
               initial="hidden"
-              animate={animate}
+              animate={desktop ? "visible" : animate}
               custom={i}
               key={i}
               className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "

@@ -1,4 +1,4 @@
-import SectionWrapper from "components/Layouts/SectionWrapper";
+import SectionWrapper from "components/SectionWrapper";
 import Socials from "components/Socials";
 import { BsCalendar } from "react-icons/bs";
 

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import NavbarMobile from "components/Nav/NavbarMobile";
-import NavbarDesktop from "components/Nav/NavbarDesktop";
-import NavbarFull from "components/Nav/NavbarFull";
+import Navbar from "components/Navbar";
+import NavbarModal from "components/NavbarModal";
 
 export default function Layout({ children }) {
   const [open, setOpen] = useState(false);
@@ -36,9 +35,9 @@ export default function Layout({ children }) {
       </Head>
 
       <div className={"bg-white dark:bg-matt-dark select-none min-h-full "}>
-        {open ? <NavbarFull setOpen={setOpen} open={open} /> : null}
-        <NavbarMobile open={open} setOpen={setOpen} />
-        <NavbarDesktop />
+        {open ? <NavbarModal setOpen={setOpen} open={open} /> : null}
+        <Navbar open={open} setOpen={setOpen} />
+
         <main
           className={
             "flex-1 transition-opacity " +

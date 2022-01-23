@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import SectionWrapper from "components/Layouts/SectionWrapper";
+import SectionWrapper from "components/SectionWrapper";
 import _ from "lodash";
-import { Items } from "./ItemObject";
+import portfolioItems from "../lib/portfolioItems";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 
@@ -23,7 +23,7 @@ export default function Portfolio() {
         Check out what I've been up to!
       </h2>
       <div className="mt-12 flex items-center justify-between w-full overflow-scroll space-x-12 no-scrollbar">
-        {Items.map((item, i) => (
+        {portfolioItems.map((item, i) => (
           <Link
             key={item.id}
             href={item.url}
