@@ -86,12 +86,12 @@ export default function Hero() {
   return (
     <>
       <div
-        className="bg-transparent my-view pt-16 pl-8 lg:pl-24 container max-w-7xl mx-auto flex flex-col justify-between"
+        className="bg-transparent my-view pt-16 container max-w-7xl mx-auto flex flex-col justify-between"
         id="hero"
       >
         <div></div>
 
-        <div className="md:flex items-center justify-between">
+        <div className="md:flex items-center justify-between px-8 lg:pl-24">
           <div className="space-y-2 flex-shrink-0">
             <motion.div variants={Hello} initial={"hidden"} animate={"visible"}>
               <h1 className="flex text-matt-textdark dark:text-matt-textlight text-5xl lg:text-7xl font-thin">
