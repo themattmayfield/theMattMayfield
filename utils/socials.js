@@ -1,4 +1,4 @@
-import { FaGithub, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaTiktok, FaYoutube, FaTwitter } from "react-icons/fa";
 
 const socials = [
   {
@@ -8,9 +8,9 @@ const socials = [
     id: 0,
   },
   {
-    name: "Instagram",
-    path: "https://instagram.com/gainthetics",
-    icon: <FaInstagram />,
+    name: "Tiktok",
+    path: "https://www.tiktok.com/@papacodes",
+    icon: <FaTiktok />,
     id: 1,
   },
   {
