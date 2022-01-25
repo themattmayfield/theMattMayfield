@@ -5,6 +5,12 @@ import Times from "components/Times";
 import { Link } from "react-scroll";
 import DayNightToggle from "components/DayNightToggle";
 import NavItems from "./NavItems";
+import {
+  LogoVarientsMobile,
+  LogoVarientsDesktop,
+  TimesAnimation,
+  ToggleAnimation,
+} from "lib/motions";
 
 export default function Navbar({ open, setOpen }) {
   const [headerBounce, setHeaderBounce] = useState(true);
@@ -12,73 +18,6 @@ export default function Navbar({ open, setOpen }) {
   setTimeout(() => {
     setHeaderBounce(false);
   }, 1000);
-
-  const LogoVarientsMobile = {
-    post: {
-      opacity: 1,
-      y: 0,
-    },
-    visible: {
-      opacity: 1,
-      y: [7, 0],
-      transition: {
-        delay: 0.3,
-        y: {
-          duration: 0.3,
-          repeat: 2,
-          repeatType: "reverse",
-          ease: "easeOut",
-        },
-      },
-    },
-  };
-
-  const LogoVarientsDesktop = {
-    hidden: {
-      opacity: 0,
-      y: -50,
-    },
-    visible: {
-      opacity: 1,
-      y: [10, 0],
-      transition: {
-        delay: 0.3,
-        y: {
-          duration: 0.3,
-          repeat: 2,
-          repeatType: "reverse",
-          ease: "easeOut",
-        },
-      },
-    },
-  };
-
-  const TimesAnimation = {
-    scale: [1, 1, 1, 1, 1],
-    rotate: [180, 0, 0, 0],
-    transition: { duration: 3 },
-    borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-  };
-
-  const ToggleAnimation = {
-    hidden: {
-      opacity: 0,
-      y: -50,
-    },
-    visible: {
-      opacity: 1,
-      y: [10, 0],
-      transition: {
-        delay: 4 * 0.05 + 0.3,
-        y: {
-          duration: 4 * 0.05 + 0.3,
-          repeat: 2,
-          repeatType: "reverse",
-          ease: "easeOut",
-        },
-      },
-    },
-  };
 
   return (
     <>

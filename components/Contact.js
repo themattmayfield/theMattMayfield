@@ -1,5 +1,7 @@
+import { forwardRef } from "react";
 import SectionWrapper from "components/SectionWrapper";
 import Socials from "components/Socials";
+import Link from "next/link";
 import { BsCalendar } from "react-icons/bs";
 
 export default function AboutMe() {
@@ -17,11 +19,13 @@ export default function AboutMe() {
           </p>
 
           <div className="flex items-center space-x-4 justify-center mb-16">
-            <Button className="bg-matt-orange">
-              Say Hi<span className="ml-2">👋🏿</span>
-            </Button>
+            <Link href="mailto:mattmayf411@gmail.com" passHref>
+              <Button className="bg-matt-orange">
+                Say Hi<span className="ml-2">👋🏿</span>
+              </Button>
+            </Link>
 
-            <Button>
+            <Button disabled>
               Schedule a Meeting
               <BsCalendar className="ml-2 w-5 h-5" />
             </Button>
@@ -34,13 +38,20 @@ export default function AboutMe() {
   );
 }
 
-const Button = ({ children, className }) => {
-  return (
-    <button
-      className={`
-        px-4 py-2 md:py-4 md:px-8 border border-matt-orange rounded flex items-center focus:outline-none ${className}`}
-    >
-      {children}
-    </button>
-  );
-};
+const Button = forwardRef(
+  ({ children, className, disabled, onClick, href }, ref) => {
+    return (
+      <a
+        href={href}
+        onClick={onClick}
+        ref={ref}
+        disabled={disabled}
+        className={`${
+          disabled ? "cursor-not-allowed" : ""
+        } px-4 py-2 md:py-4 md:px-8 border border-matt-orange rounded flex items-center focus:outline-none ${className}`}
+      >
+        {children}
+      </a>
+    );
+  }
+);

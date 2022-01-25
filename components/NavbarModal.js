@@ -3,14 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import DayNightToggle from "components/DayNightToggle";
 import NavItems from "./NavItems";
 import { useLockBodyScroll } from "utils/bodyLock";
+import { MainDivVarients } from "lib/motions";
 
 export default function NavbarFull({ open, setOpen }) {
   useLockBodyScroll();
-
-  const MainDivVarients = {
-    open: { x: 0, opacity: 1, transition: { duration: 0.3 } },
-    closed: { x: "-100%", opacity: 0 },
-  };
 
   return (
     <>

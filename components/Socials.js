@@ -2,25 +2,7 @@ import React, { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import socials from "utils/socials";
-const SocialVarients = {
-  hidden: {
-    opacity: 0,
-    y: -50,
-  },
-  visible: (i) => ({
-    opacity: 1,
-    y: [10, 0],
-    transition: {
-      delay: i * 0.05 + 0.3,
-      y: {
-        duration: i * 0.05 + 0.3,
-        repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
-      },
-    },
-  }),
-};
+import { SocialVarients } from "lib/motions";
 
 const SocialLink = () => {
   const controls = useAnimation();
@@ -43,7 +25,7 @@ const SocialLink = () => {
       variants={SocialVarients}
       custom={i}
       key={i}
-      className="no-underline rounded-full border-2 border-matt-orange w-12 h-12 cursor-pointer flex items-center justify-center my-0"
+      className="no-underline rounded-full border-2 border-matt-orange w-12 h-12 cursor-pointer flex items-center justify-center my-0 text-2xl"
       rel="noreferrer"
       target="_blank"
       aria-label={social.name}

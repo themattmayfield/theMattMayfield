@@ -1,40 +1,17 @@
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import navItems from "lib/navItems";
-
-const NavItemsVarients = {
-  hidden: {
-    opacity: 0,
-    y: -50,
-  },
-  post: {
-    opacity: 1,
-    y: 0,
-  },
-  visible: (i) => ({
-    opacity: 1,
-    y: [10, 0],
-    transition: {
-      delay: i * 0.05 + 0.3,
-      y: {
-        duration: i * 0.05 + 0.3,
-        repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
-      },
-    },
-  }),
-};
+import { NavItemsVarients } from "lib/motions";
 
 export default function NavItems({ animate, setOpen, desktop }) {
   return (
     <>
-      {navItems.map((items, i) =>
-        items.id != 5 ? (
+      {navItems.map((item, i) =>
+        item.id != 5 ? (
           <Link
             onClick={() => (desktop ? null : setOpen(false))}
-            key={items.id}
-            to={items.path}
+            key={item.id}
+            to={item.path}
             spy={true}
             smooth={true}
           >
@@ -46,11 +23,11 @@ export default function NavItems({ animate, setOpen, desktop }) {
               key={i}
               className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "
             >
-              <span className="ml-2">{items.text}</span>
+              <span className="ml-2">{item.text}</span>
             </motion.li>
           </Link>
         ) : (
-          <a key={items.id} target="_blank" href={items.path}>
+          <a key={item.id} target="_blank" href={item.path}>
             <motion.li
               variants={NavItemsVarients}
               initial="hidden"
@@ -59,7 +36,7 @@ export default function NavItems({ animate, setOpen, desktop }) {
               key={i}
               className="px-3 py-2 flex items-center text-sm uppercase font-bold dark:text-matt-textlight dark:hover:text-matt-orange text-matt-textdark hover:text-matt-orange cursor-pointer "
             >
-              <span className="ml-2">{items.text}</span>
+              <span className="ml-2">{item.text}</span>
             </motion.li>
           </a>
         )

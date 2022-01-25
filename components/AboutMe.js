@@ -1,33 +1,6 @@
 import SectionWrapper from "components/SectionWrapper";
 import BlurImage from "components/BlurImage";
-import { FaGithub, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
-
-const socials = [
-  {
-    name: "Github",
-    path: "https://github.com/theMattMayfield",
-    icon: <FaGithub className="w-7 h-7" />,
-    id: 0,
-  },
-  {
-    name: "Instagram",
-    path: "https://instagram.com/theMattMayfield",
-    icon: <FaInstagram className="w-7 h-7" />,
-    id: 2,
-  },
-  {
-    name: "Youtube",
-    path: "https://youtube.com/theMattMayfield",
-    icon: <FaYoutube className="w-7 h-7" />,
-    id: 3,
-  },
-  {
-    name: "Twitter",
-    path: "https://twitter.com/theMattMayfield",
-    icon: <FaTwitter className="w-7 h-7" />,
-    id: 4,
-  },
-];
+import socials from "utils/socials";
 
 export default function AboutMe() {
   return (
@@ -77,7 +50,7 @@ export default function AboutMe() {
               {socials.map((social) => (
                 <a
                   key={social.id}
-                  className="no-underline rounded-full w-12 h-12 cursor-pointer flex items-center justify-center my-0"
+                  className="no-underline rounded-full w-12 h-12 cursor-pointer flex items-center justify-center my-0 text-[28px]"
                   rel="noreferrer"
                   target="_blank"
                   aria-label={social.name}

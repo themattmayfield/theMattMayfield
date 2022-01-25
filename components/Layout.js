@@ -18,7 +18,7 @@ export default function Layout({ children }) {
   // Run the function to change the VH variable when the browser is resized
   useEffect(() => {
     // console.clear();
-    // console.log("Hi SURE! Hope you enjoy 😀 - MATT");
+    console.log("Hey! Hope you enjoy 😀 - MATT");
     changeVhVariable();
   }, []);
   return (

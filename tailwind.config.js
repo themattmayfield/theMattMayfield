@@ -30,11 +30,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    extend: {
-      backgroundOpacity: ["dark"],
-      animation: ["hover", "focus"],
-    },
-  },
+  variants: {},
   plugins: [],
 };

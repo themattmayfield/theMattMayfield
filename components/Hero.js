@@ -3,86 +3,15 @@ import { motion } from "framer-motion";
 import WordsFading from "components/WordsFading";
 import { Link } from "react-scroll";
 import BlurImage from "components/BlurImage";
+import {
+  Hello,
+  hypeTextAnimation,
+  AboutMeButton,
+  chevronAnimation,
+  hoverAnimation,
+} from "lib/motions";
 
 export default function Hero() {
-  const Hello = {
-    hidden: {
-      opacity: 0,
-      x: -50,
-    },
-    visible: {
-      opacity: 1,
-      x: [10, 0],
-      transition: {
-        delay: 0.35,
-        x: {
-          duration: 0.35,
-          repeat: 2,
-          repeatType: "reverse",
-          ease: "easeOut",
-        },
-      },
-    },
-  };
-
-  const hypeTextAnimation = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.71,
-        duration: 0.35,
-      },
-    },
-  };
-
-  const AboutMeButton = {
-    hidden: {
-      opacity: 0,
-      y: 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 1.06,
-        y: {
-          duration: 0.35,
-          ease: "easeOut",
-        },
-      },
-    },
-  };
-
-  const chevronAnimation = {
-    hidden: {
-      opacity: 0,
-      y: 50,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 1.06,
-        y: {
-          duration: 0.35,
-          ease: "easeOut",
-        },
-      },
-    },
-  };
-
-  const hoverAnimation = {
-    scale: 1.2,
-    transition: {
-      type: "spring",
-    },
-  };
-
   return (
     <>
       <div
