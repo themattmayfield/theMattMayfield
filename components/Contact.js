@@ -3,7 +3,7 @@ import SectionWrapper from "components/SectionWrapper";
 import Socials from "components/Socials";
 import Link from "next/link";
 import { BsCalendar } from "react-icons/bs";
-
+import NowPlaying from "components/NowPlaying";
 export default function AboutMe() {
   return (
     <>
@@ -18,7 +18,7 @@ export default function AboutMe() {
             say hi, I'll try my best to get back to you!
           </p>
 
-          <div className="flex items-center space-x-4 justify-center mb-16">
+          <div className="flex items-center space-x-4 justify-center mb-12">
             <Link href="mailto:mattmayf411@gmail.com" passHref>
               <Button className="bg-matt-orange">
                 Say Hi<span className="ml-2">👋🏿</span>
@@ -32,6 +32,9 @@ export default function AboutMe() {
           </div>
 
           <Socials />
+          <div className="grid place-content-center mt-10">
+            <NowPlaying />
+          </div>
         </div>
       </SectionWrapper>
     </>

@@ -55,9 +55,13 @@ export default function Portfolio() {
             onClick={() => setActiveItem(item)}
             className="h-64 w-auto cursor-pointer"
             src={
-              currentTheme === "dark" && item.id == 3
-                ? "/heroLight.png"
-                : item.ImagePath
+              (currentTheme === "dark" &&
+                item?.name == "portfolio" &&
+                "/heroLight.png") ||
+              (currentTheme === "dark" &&
+                item?.name == "sure" &&
+                "/SURE_light.png") ||
+              item.ImagePath
             }
           />
         ))}
@@ -72,9 +76,13 @@ export default function Portfolio() {
                 onClick={() => setActiveItem(item)}
                 className="h-64 w-auto cursor-pointer"
                 src={
-                  currentTheme === "dark" && item.id == 3
-                    ? "/heroLight.png"
-                    : item.ImagePath
+                  (currentTheme === "dark" &&
+                    item?.name == "portfolio" &&
+                    "/heroLight.png") ||
+                  (currentTheme === "dark" &&
+                    item?.name == "sure" &&
+                    "/SURE_light.png") ||
+                  item.ImagePath
                 }
               />
             ))}

@@ -45,6 +45,7 @@ export default function Hero() {
             >
               <WordsFading />
             </motion.p>
+
             <Link to="about" spy={true} smooth={true}>
               <motion.button
                 variants={AboutMeButton}
