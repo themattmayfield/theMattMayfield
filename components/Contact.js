@@ -32,7 +32,7 @@ export default function AboutMe() {
           </div>
 
           <Socials />
-          <div className="grid place-content-center mt-10">
+          <div className="w-full grid place-content-center mt-10">
             <NowPlaying />
           </div>
         </div>

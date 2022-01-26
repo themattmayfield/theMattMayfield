@@ -63,12 +63,14 @@ export default function PortfolioItemModal({ activeItem, setActiveItem }) {
                   ))}
                 </div>
                 <div className="mt-6 flex items-center space-x-4">
-                  <button
-                    className="focus:outline-none"
-                    onClick={() => router.push(activeItem?.github)}
-                  >
-                    <FiGithub className="text-xl cursor-pointer hover:text-matt-orange transition duration-300 ease-in-out" />
-                  </button>
+                  {activeItem?.github ? (
+                    <button
+                      className="focus:outline-none"
+                      onClick={() => router.push(activeItem?.github)}
+                    >
+                      <FiGithub className="text-xl cursor-pointer hover:text-matt-orange transition duration-300 ease-in-out" />
+                    </button>
+                  ) : null}
                   <button
                     className="focus:outline-none"
                     onClick={() => router.push(activeItem?.url)}

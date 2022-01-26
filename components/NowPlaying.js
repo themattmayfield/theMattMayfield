@@ -55,7 +55,7 @@ function AnimatedBars() {
   }, []);
 
   return (
-    <div className="w-auto flex items-end overflow-hidden">
+    <div className="w-auto flex items-end overflow-hidden ml-2 sm:ml-0">
       <span
         id="bar1"
         className="w-1 mr-[3px] h-2 bg-gray-300 dark:bg-gray-500 opacity-75"

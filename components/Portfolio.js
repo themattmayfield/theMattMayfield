@@ -79,9 +79,6 @@ export default function Portfolio() {
                   (currentTheme === "dark" &&
                     item?.name == "portfolio" &&
                     "/heroLight.png") ||
-                  (currentTheme === "dark" &&
-                    item?.name == "sure" &&
-                    "/SURE_light.png") ||
                   item.ImagePath
                 }
               />
