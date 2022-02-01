@@ -7,83 +7,59 @@ import {
   getTopTracksMedium,
   getTopTracksShort,
 } from "utils/spotify";
-// import dynamic from "next/dynamic";
-import { animate } from "motion";
-
-// This is to prevent the loading component from ssr and throwing 'classname mismatch' error
-// const Loading = dynamic(() => import("components/Loading"), { ssr: false });
+import { motion } from "framer-motion";
 
 function AnimatedBars() {
-  useEffect(() => {
-    animate(
-      "#bar1",
-      {
+  const motions = [
+    {
+      animate: {
         transform: [
           "scaleY(1.0) translateY(0rem)",
           "scaleY(1.5) translateY(-0.082rem)",
           "scaleY(1.0) translateY(0rem)",
         ],
       },
-      {
-        duration: 1.0,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-    animate(
-      "#bar2",
-      {
+      transition: { duration: 1, repeat: "Infinity" },
+    },
+    {
+      animate: {
         transform: [
           "scaleY(1.0) translateY(0rem)",
           "scaleY(3) translateY(-0.083rem)",
           "scaleY(1.0) translateY(0rem)",
         ],
       },
-      {
-        delay: 0.2,
-        duration: 1.5,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-    animate(
-      "#bar3",
-      {
+      transition: { delay: 0.2, duration: 1.5, repeat: "Infinity" },
+    },
+    {
+      animate: {
         transform: [
           "scaleY(1.0)  translateY(0rem)",
           "scaleY(0.5) translateY(0.37rem)",
           "scaleY(1.0)  translateY(0rem)",
         ],
       },
-      {
-        delay: 0.3,
-        duration: 1.5,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-  }, []);
-
+      transition: { delay: 0.3, duration: 1.5, repeat: "Infinity" },
+    },
+  ];
   return (
-    <div className="w-auto flex items-end overflow-hidden">
-      <span
-        id="bar1"
-        className="w-1 mr-[3px] h-2 bg-gray-300 dark:bg-gray-500 opacity-75"
-      />
-      <span
-        id="bar2"
-        className="w-1 mr-[3px] h-1 bg-gray-300 dark:bg-gray-500"
-      />
-      <span
-        id="bar3"
-        className="w-1 h-3 bg-gray-300 dark:bg-gray-500 opacity-80"
-      />
+    <div className="flex justify-center items-center w-full h-[90vh]">
+      <div className="flex justify-center items-end space-x-[3px] overflow-hidden w-[100px] min-w-[100px] h-[50px] my-0 mx-auto z-20 relative left-0 right-0">
+        {motions.map((bar, index) => (
+          <motion.span
+            key={index}
+            {...bar}
+            style={{ backgroundColor: "rgba(27, 27, 27" }}
+            className="w-2.5 h-5 ease-in-out"
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
 export default function Tracks() {
-  const [topTracks, setTopTracks] = useState([]);
+  const [topTracks, setTopTracks] = useState(null);
   const [activeRange, setActiveRange] = useState("long");
   const [amountToShow, setAmountToShow] = useState(5);
 
@@ -118,8 +94,8 @@ export default function Tracks() {
   }, []);
 
   const changeRange = async (range) => {
+    setTopTracks(null);
     setActiveRange(range);
-    setTopTracks([]);
     const response = await apiCalls[range];
     const { items } = await response.json();
     setTopTracks(items);
@@ -154,7 +130,7 @@ export default function Tracks() {
               ))}
             </div>
           </div>
-          {topTracks.length ? (
+          {topTracks ? (
             <div className="flex flex-col gap-4 no-scrollbar  mb-[100px]">
               {topTracks.map(
                 (track, index) =>

@@ -1,72 +1,53 @@
-import { useEffect } from "react";
-import { animate } from "motion";
 import useSWR from "swr";
 import fetcher from "lib/fetcher";
+import { motion } from "framer-motion";
 
 function AnimatedBars() {
-  useEffect(() => {
-    animate(
-      "#bar1",
-      {
+  const motions = [
+    {
+      animate: {
         transform: [
           "scaleY(1.0) translateY(0rem)",
           "scaleY(1.5) translateY(-0.082rem)",
           "scaleY(1.0) translateY(0rem)",
         ],
       },
-      {
-        duration: 1.0,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-    animate(
-      "#bar2",
-      {
+      transition: { duration: 1, repeat: "Infinity" },
+    },
+    {
+      animate: {
         transform: [
           "scaleY(1.0) translateY(0rem)",
           "scaleY(3) translateY(-0.083rem)",
           "scaleY(1.0) translateY(0rem)",
         ],
       },
-      {
-        delay: 0.2,
-        duration: 1.5,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-    animate(
-      "#bar3",
-      {
+      transition: { delay: 0.2, duration: 1.5, repeat: "Infinity" },
+    },
+    {
+      animate: {
         transform: [
           "scaleY(1.0)  translateY(0rem)",
           "scaleY(0.5) translateY(0.37rem)",
           "scaleY(1.0)  translateY(0rem)",
         ],
       },
-      {
-        delay: 0.3,
-        duration: 1.5,
-        repeat: Infinity,
-        easing: ["ease-in-out"],
-      }
-    );
-  }, []);
-
+      transition: { delay: 0.3, duration: 1.5, repeat: "Infinity" },
+    },
+  ];
   return (
-    <div className="w-auto flex items-end overflow-hidden ml-2 sm:ml-0">
-      <span
-        id="bar1"
-        className="w-1 mr-[3px] h-2 bg-gray-300 dark:bg-gray-500 opacity-75"
+    <div className="w-auto space-x-[3px] flex items-end overflow-hidden ml-2 sm:ml-0">
+      <motion.span
+        {...motions[0]}
+        className="w-1 h-2 ease-in-out bg-gray-300 dark:bg-gray-500 opacity-75"
       />
-      <span
-        id="bar2"
-        className="w-1 mr-[3px] h-1 bg-gray-300 dark:bg-gray-500"
+      <motion.span
+        {...motions[1]}
+        className="w-1 h-1 ease-in-out bg-gray-300 dark:bg-gray-500"
       />
-      <span
-        id="bar3"
-        className="w-1 h-3 bg-gray-300 dark:bg-gray-500 opacity-80"
+      <motion.span
+        {...motions[2]}
+        className="w-1 h-3 ease-in-out bg-gray-300 dark:bg-gray-500 opacity-80"
       />
     </div>
   );
