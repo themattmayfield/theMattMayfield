@@ -3,13 +3,13 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 import { useSpring, animated } from 'react-spring';
 
-const Wrapper = styled(animated.div)`
+const Wrapper = styled(animated.div)<{ $mobile: boolean }>`
   display: flex;
-  transform: ${({ mobile }) => (mobile ? 'scale(1)' : 'scale(0.7)')};
-  margin: ${({ mobile }) => (mobile ? '1rem 0' : '0')};
-  margin-right: ${({ mobile }) => (mobile ? '0rem' : '0.5rem')};
-  position: ${({ mobile }) => (mobile ? 'relative' : 'relative')};
-  right: ${({ mobile }) => (mobile ? null : '0')};
+  transform: ${({ $mobile }) => ($mobile ? 'scale(1)' : 'scale(0.7)')};
+  margin: ${({ $mobile }) => ($mobile ? '1rem 0' : '0')};
+  margin-right: ${({ $mobile }) => ($mobile ? '0rem' : '0.5rem')};
+  position: ${({ $mobile }) => ($mobile ? 'relative' : 'relative')};
+  right: ${({ $mobile }) => ($mobile ? null : '0')};
 
   & input {
     position: absolute;
@@ -183,7 +183,7 @@ const Span = styled.span`
   }
 `;
 
-const DarkModeToggle = ({ mobile }) => {
+const DarkModeToggle = ({ mobile }: { mobile: boolean }) => {
   const { systemTheme, setTheme, theme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -204,7 +204,7 @@ const DarkModeToggle = ({ mobile }) => {
       <input
         type="checkbox"
         id="dn"
-        checked={currentTheme === 'dark' ? true : false}
+        checked={currentTheme === 'dark'}
         onChange={() =>
           currentTheme === 'dark' ? setTheme('light') : setTheme('dark')
         }

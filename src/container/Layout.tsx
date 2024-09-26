@@ -4,7 +4,7 @@ import type React from 'react';
 import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import NavbarModal from '@/components/NavbarModal';
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [open, setOpen] = useState(false);

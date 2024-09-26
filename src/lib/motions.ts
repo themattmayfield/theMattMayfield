@@ -12,8 +12,8 @@ export const Hello = {
       x: {
         duration: 0.35,
         repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
+        repeatType: 'reverse',
+        ease: 'easeOut',
       },
     },
   },
@@ -46,7 +46,7 @@ export const AboutMeButton = {
       delay: 1.06,
       y: {
         duration: 0.35,
-        ease: "easeOut",
+        ease: 'easeOut',
       },
     },
   },
@@ -64,7 +64,7 @@ export const chevronAnimation = {
       delay: 1.06,
       y: {
         duration: 0.35,
-        ease: "easeOut",
+        ease: 'easeOut',
       },
     },
   },
@@ -73,7 +73,7 @@ export const chevronAnimation = {
 export const hoverAnimation = {
   scale: 1.2,
   transition: {
-    type: "spring",
+    type: 'spring',
   },
 };
 
@@ -91,8 +91,8 @@ export const LogoVarientsMobile = {
       y: {
         duration: 0.3,
         repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
+        repeatType: 'reverse',
+        ease: 'easeOut',
       },
     },
   },
@@ -111,8 +111,8 @@ export const LogoVarientsDesktop = {
       y: {
         duration: 0.3,
         repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
+        repeatType: 'reverse',
+        ease: 'easeOut',
       },
     },
   },
@@ -122,8 +122,10 @@ export const TimesAnimation = {
   scale: [1, 1, 1, 1, 1],
   rotate: [180, 0, 0, 0],
   transition: { duration: 3 },
-  borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+  borderRadius: ['20%', '20%', '50%', '50%', '20%'],
 };
+
+export type TTimesAnimation = typeof TimesAnimation;
 
 export const ToggleAnimation = {
   hidden: {
@@ -138,8 +140,8 @@ export const ToggleAnimation = {
       y: {
         duration: 4 * 0.05 + 0.3,
         repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
+        repeatType: 'reverse',
+        ease: 'easeOut',
       },
     },
   },
@@ -148,7 +150,7 @@ export const ToggleAnimation = {
 // NAVBARMODAL
 export const MainDivVarients = {
   open: { x: 0, opacity: 1, transition: { duration: 0.3 } },
-  closed: { x: "-100%", opacity: 0 },
+  closed: { x: '-100%', opacity: 0 },
 };
 
 // NAVITEMS
@@ -161,7 +163,7 @@ export const NavItemsVarients = {
     opacity: 1,
     y: 0,
   },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: [10, 0],
     transition: {
@@ -169,8 +171,8 @@ export const NavItemsVarients = {
       y: {
         duration: i * 0.05 + 0.3,
         repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
+        repeatType: 'reverse',
+        ease: 'easeOut',
       },
     },
   }),
@@ -182,7 +184,7 @@ export const SocialVarients = {
     opacity: 0,
     y: -50,
   },
-  visible: (i) => ({
+  visible: (i: number) => ({
     opacity: 1,
     y: [10, 0],
     transition: {
@@ -190,8 +192,8 @@ export const SocialVarients = {
       y: {
         duration: i * 0.05 + 0.3,
         repeat: 2,
-        repeatType: "reverse",
-        ease: "easeOut",
+        repeatType: 'reverse',
+        ease: 'easeOut',
       },
     },
   }),

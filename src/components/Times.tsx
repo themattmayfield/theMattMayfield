@@ -1,9 +1,10 @@
+import type { TTimesAnimation } from '@/lib/motions';
 import { motion } from 'framer-motion';
 
 export default function Times({
   className,
   animate,
-}: { className: string; animate: string }) {
+}: { className: string; animate: TTimesAnimation }) {
   return (
     <>
       <motion.svg

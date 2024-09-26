@@ -3,7 +3,7 @@ import { useState } from 'react';
 import SectionWrapper from '@/components/SectionWrapper';
 import Track from './Track';
 import { motion } from 'framer-motion';
-import { cn } from '@/utils/cn';
+import { cn } from '@/lib/utils';
 
 const motions = [
   {

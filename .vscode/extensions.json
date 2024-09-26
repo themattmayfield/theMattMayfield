@@ -2,6 +2,6 @@
   "recommendations": [
     "biomejs.biome",
     "bradlc.vscode-tailwindcss",
-    "wix.vscode-import-cost",
+    "wix.vscode-import-cost"
   ]
 }
