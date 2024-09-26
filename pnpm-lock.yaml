@@ -62,9 +62,6 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.13)
-      use-sound:
-        specifier: 4.0.3
-        version: 4.0.3(react@19.0.0-rc-f994737d14-20240522)
     devDependencies:
       '@biomejs/biome':
         specifier: 1.9.2
@@ -2159,9 +2156,6 @@ packages:
   hermes-parser@0.23.1:
     resolution: {integrity: sha512-oxl5h2DkFW83hT4DAUJorpah8ou4yvmweUzLJmmr6YV2cezduCdlil1AvU/a/xSsAFo4WUcNA4GoV5Bvq6JffA==}
 
-  howler@2.2.4:
-    resolution: {integrity: sha512-iARIBPgcQrwtEr+tALF+rapJ8qSc+Set2GJQl7xT1MQzWaVkFebdJhR3alVlSiUf5U7nAANKuj3aWpwerocD5w==}
-
   http-errors@2.0.0:
     resolution: {integrity: sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==}
     engines: {node: '>= 0.8'}
@@ -3444,11 +3438,6 @@ packages:
     peerDependenciesMeta:
       '@types/react':
         optional: true
-
-  use-sound@4.0.3:
-    resolution: {integrity: sha512-L205pEUFIrLsGYsCUKHQVCt0ajs//YQOFbEQeNwaWaqQj3y3st4SuR+rvpMHLmv8hgTcfUFlvMQawZNI3OE18w==}
-    peerDependencies:
-      react: '>=16.8'
 
   use-sync-external-store@1.2.2:
     resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
@@ -5940,8 +5929,6 @@ snapshots:
     dependencies:
       hermes-estree: 0.23.1
 
-  howler@2.2.4: {}
-
   http-errors@2.0.0:
     dependencies:
       depd: 2.0.0
@@ -7379,11 +7366,6 @@ snapshots:
       tslib: 2.7.0
     optionalDependencies:
       '@types/react': 18.3.9
-
-  use-sound@4.0.3(react@19.0.0-rc-f994737d14-20240522):
-    dependencies:
-      howler: 2.2.4
-      react: 19.0.0-rc-f994737d14-20240522
 
   use-sync-external-store@1.2.2(react@19.0.0-rc-f994737d14-20240522):
     dependencies:

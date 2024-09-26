@@ -1,7 +1,6 @@
 'use client';
 
 import useSWR from 'swr';
-import fetcher from '@/lib/fetcher';
 import { motion } from 'framer-motion';
 
 function AnimatedBars() {
@@ -68,7 +67,11 @@ function AnimatedBars() {
 }
 
 export default function NowPlaying() {
-  const { data } = useSWR('/api/now-playing', fetcher);
+  const { data } = useSWR(
+    '/api/now-playing',
+    (...args: Parameters<typeof fetch>) =>
+      fetch(...args).then((res) => res.json())
+  );
 
   return (
     <div className="flex flex-row-reverse items-center sm:flex-row mb-8 space-x-0 sm:space-x-2 w-full">
