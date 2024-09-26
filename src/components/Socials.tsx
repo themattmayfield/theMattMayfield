@@ -1,9 +1,9 @@
-"use client";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-import socials from "@/utils/socials";
-import { SocialVarients } from "@/lib/motions";
+'use client';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
+import socials from '@/utils/socials';
+import { SocialVarients } from '@/lib/motions';
 
 const SocialLink = () => {
   const controls = useAnimation();
@@ -13,7 +13,7 @@ const SocialLink = () => {
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [controls, inView]);
 
