@@ -32,7 +32,7 @@ export default function Navbar({
       {/* MOBILE */}
       <nav
         className={
-          'lg:hidden fixed z-50 w-full dark:bg-matt-darknav bg-white opacity-95 px-2 py-3 shadow h-16'
+          'lg:hidden fixed z-50 w-full dark:bg-matt-darknav bg-white px-2 py-3 shadow h-16'
         }
       >
         <div className="px-4 mx-auto w-full relative flex items-center justify-between ">

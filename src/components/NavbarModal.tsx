@@ -28,7 +28,7 @@ export default function NavbarModal({
         overlay={false}
         displayCloseButton={false}
         side="left"
-        className="w-full lg:hidden bg-white dark:bg-matt-darknav z-40 top-16"
+        className="w-full lg:hidden bg-white dark:bg-matt-darknav z-40 top-[63px]"
       >
         <div className="flex flex-col h-[calc(100%-64px)] relative w-full">
           <ul className="space-y-6 flex flex-col h-full justify-center items-center list-none">
