@@ -9,7 +9,7 @@ const portfolioItems = [
     description:
       'A dashboard for Spotify that allows you to view your listening history, top artists, top tracks, and more.',
     github: 'https://github.com/themattmayfield/SpotifyDashboard',
-    url: 'https://www.spotifydash.com/',
+    url: 'https://spotifydash.co/',
   },
   {
     id: 1,
