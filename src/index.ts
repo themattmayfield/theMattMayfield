@@ -1,12 +1,13 @@
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
+import { stream } from 'hono/streaming';
 import { portfolioData } from './data/portfolio-data';
 import { renderPortfolio } from './templates/portfolio';
 import { watch } from 'fs';
 
 const app = new Hono();
 
-let hmrClients: Set<ReadableStreamDefaultController> = new Set();
+let hmrClients: Set<any> = new Set();
 
 app.use(
   '/*',
@@ -16,11 +17,15 @@ app.use(
 );
 
 app.get('/hmr', (c) => {
-  return c.streamText(async (stream) => {
+  c.header('Content-Type', 'text/event-stream');
+  c.header('Cache-Control', 'no-cache');
+  c.header('Connection', 'keep-alive');
+  
+  return stream(c, async (stream) => {
     await stream.write('data: connected\n\n');
     hmrClients.add(stream);
     
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       const cleanup = () => {
         hmrClients.delete(stream);
         resolve();
@@ -28,10 +33,6 @@ app.get('/hmr', (c) => {
       
       c.req.raw.signal?.addEventListener('abort', cleanup);
     });
-  }, {
-    'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    'Connection': 'keep-alive',
   });
 });
 
@@ -61,14 +62,14 @@ if (process.env.NODE_ENV !== 'production') {
     });
   };
 
-  watch('./src', { recursive: true }, (eventType, filename) => {
+  watch('./src', { recursive: true }, (_, filename) => {
     if (filename && (filename.endsWith('.ts') || filename.endsWith('.js'))) {
       console.log(`File changed: ${filename}`);
       setTimeout(notifyClients, 100);
     }
   });
 
-  watch('./public', { recursive: true }, (eventType, filename) => {
+  watch('./public', { recursive: true }, (_, filename) => {
     if (filename) {
       console.log(`Static file changed: ${filename}`);
       notifyClients();
