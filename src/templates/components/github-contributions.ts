@@ -1,4 +1,4 @@
-import { fetchGitHubContributions } from '../../lib/github-contributions';
+import { fetchGitHubContributions } from '../../lib/github-contributions.js';
 
 export const renderGithubContributions = async () => {
   const contributionsSVG = await fetchGitHubContributions('themattmayfield');

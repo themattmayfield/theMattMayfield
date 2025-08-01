@@ -1,8 +1,8 @@
 import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
 import { stream } from 'hono/streaming';
-import { portfolioData } from './data/portfolio-data';
-import { renderPortfolio } from './templates/portfolio';
+import { portfolioData } from './data/portfolio-data.js';
+import { renderPortfolio } from './templates/portfolio.js';
 import { watch } from 'fs';
 
 const app = new Hono();
