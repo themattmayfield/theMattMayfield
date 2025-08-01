@@ -1,5 +1,5 @@
-import { serveStatic } from '@hono/node-server/serve-static';
 import { Hono } from 'hono';
+import { serveStatic } from 'hono/serve-static';
 import { portfolioData } from './data/portfolio-data';
 import { renderPortfolio } from './templates/portfolio';
 
