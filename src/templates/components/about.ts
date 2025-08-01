@@ -1,5 +1,5 @@
-import { portfolioData } from '../../data/portfolio-data.js';
-import { renderGithubContributions } from './github-contributions.js';
+import { portfolioData } from '../../data/portfolio-data';
+import { renderGithubContributions } from './github-contributions';
 
 export const renderAbout = async () => `
   <section class="mb-12 space-y-5 leading-7">
