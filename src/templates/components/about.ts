@@ -1,10 +1,13 @@
 import { portfolioData } from '../../data/portfolio-data';
+import { renderGithubContributions } from './github-contributions';
 
-export const renderAbout = () => `
+export const renderAbout = async () => `
   <section class="mb-12 space-y-5 leading-7">
     <p>Hey, I am ${portfolioData.name}, a <span class="lowercase">${portfolioData.title}</span> 
     who finds beauty in transforming architectural challenges into clean, 
     efficient code.</p>
+
+    ${await renderGithubContributions()}
 
     <p>
     Working at

@@ -1,5 +1,3 @@
-import { getS3Link } from '../lib/getS3Link';
-
 export const portfolioData = {
   name: 'Matt Mayfield',
   title: 'Software Engineer',
@@ -11,7 +9,7 @@ export const portfolioData = {
   projects: [
     {
       name: 'SpotifyDash',
-      image: getS3Link('spotify-logo.png'),
+      image: '/spotify_logo.png',
       link: 'https://spotifydash.co/',
     },
     // {
@@ -22,7 +20,7 @@ export const portfolioData = {
   ],
   work: {
     name: 'Sure',
-    image: getS3Link('sure-logo.png'),
+    image: '/sure-logo.png',
     link: 'https://www.sureapp.com/',
   },
 };

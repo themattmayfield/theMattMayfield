@@ -1,18 +1,18 @@
 import { github } from '../../public/icons/github';
 import type { PortfolioData } from '../data/portfolio-data';
-import { getS3Link } from '../lib/getS3Link';
 import { renderAbout } from './components/about';
 import { renderBuiltWith } from './components/built-with';
+
 import { renderHeader } from './components/header';
 
-export function renderPortfolio(data: PortfolioData): string {
+export async function renderPortfolio(data: PortfolioData): Promise<string> {
   return `
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="${getS3Link('hand.png')}">
+    <link rel="icon" href="/hand.png">
     <title>${data.name}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,8 +46,7 @@ export function renderPortfolio(data: PortfolioData): string {
      <main class="max-w-2xl mx-auto">
            ${renderHeader()}
        
-                ${renderAbout()}
-
+                 ${await renderAbout()}
 <hr class="w-[50px] my-8 mx-auto border-[#7d7d7d4d]" />
 
                 ${renderBuiltWith()}
