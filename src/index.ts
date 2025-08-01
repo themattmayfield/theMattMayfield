@@ -1,16 +1,12 @@
 import { Hono } from 'hono';
-import { serveStatic } from 'hono/serve-static';
 import { portfolioData } from './data/portfolio-data';
 import { renderPortfolio } from './templates/portfolio';
 
 const app = new Hono();
 
-app.use(
-  '/*',
-  serveStatic({
-    root: './public',
-  })
-);
+app.get('/favicon.ico', (c) => {
+  return c.notFound();
+});
 
 app.get('/', async (c) => {
   const html = await renderPortfolio(portfolioData);
