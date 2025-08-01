@@ -1,9 +1,9 @@
-import { github } from '../../public/icons/github';
-import type { PortfolioData } from '../data/portfolio-data';
-import { renderAbout } from './components/about';
-import { renderBuiltWith } from './components/built-with';
+import { github } from '../../public/icons/github.js';
+import type { PortfolioData } from '../data/portfolio-data.js';
+import { renderAbout } from './components/about.js';
+import { renderBuiltWith } from './components/built-with.js';
 
-import { renderHeader } from './components/header';
+import { renderHeader } from './components/header.js';
 
 export async function renderPortfolio(data: PortfolioData): Promise<string> {
   return `
