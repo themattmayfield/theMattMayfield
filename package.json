@@ -12,6 +12,7 @@
     "@hono/node-server": "1.13.8"
   },
   "devDependencies": {
+    "@types/node": "^20.11.17",
     "@biomejs/biome": "1.9.4",
     "@types/bun": "latest"
   }
