@@ -1,12 +1,26 @@
 {
-  "functions": {
-    "src/index.ts": {
-      "runtime": "@vercel/node@18"
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.ts",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
-  },
+  ],
   "routes": [
     {
-      "src": "/public/(.*)",
+      "src": "/css/(.*)",
+      "dest": "/public/css/$1"
+    },
+    {
+      "src": "/icons/(.*)",
+      "dest": "/public/icons/$1"
+    },
+    {
+      "src": "/(.*\\.(png|js|ts))",
       "dest": "/public/$1"
     },
     {
