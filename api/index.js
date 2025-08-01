@@ -1,5 +1,5 @@
-import { handle } from 'hono/vercel';
-import { Hono } from 'hono';
+const { handle } = require('hono/vercel');
+const { Hono } = require('hono');
 
 const app = new Hono();
 
@@ -11,4 +11,4 @@ app.get('/', async (c) => {
   return c.html('<h1>Hello World</h1>');
 });
 
-export default handle(app);
+module.exports = handle(app);
