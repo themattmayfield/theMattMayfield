@@ -14,6 +14,8 @@
   "devDependencies": {
     "@types/node": "^20.11.17",
     "@biomejs/biome": "1.9.4",
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "tsx": "^4.7.1",
+    "typescript": "^5.8.3"
   }
 }
