@@ -1,6 +1,5 @@
 {
   "name": "mattmayf.me",
-  "type": "module",
   "scripts": {
     "dev": "bun --watch src/server.ts",
     "build": "echo 'Build completed'",
