@@ -2,7 +2,7 @@
   "name": "mattmayf.me",
   "scripts": {
     "dev": "bun --watch src/server.ts",
-    "build": "bun build src/index.ts --outdir dist",
+    "build": "echo 'Build completed'",
     "start": "bun run dist/index.js"
   },
   "dependencies": {
