@@ -61,16 +61,16 @@ export async function fetchGitHubContributions(username: string): Promise<string
     if (!token) {
       console.warn('GITHUB_PAT environment variable not found, using mock data');
       const mockData = generateMockContributions();
-      return generateContributionsSVG(mockData);
+      return generateContributionsWithStats(mockData);
     }
 
     const contributionsData = await fetchRealContributions(username, token);
-    return generateContributionsSVG(contributionsData);
+    return generateContributionsWithStats(contributionsData);
   } catch (error) {
     console.error('Error fetching GitHub contributions:', error);
     // Fallback to mock data on error
     const mockData = generateMockContributions();
-    return generateContributionsSVG(mockData);
+    return generateContributionsWithStats(mockData);
   }
 }
 
@@ -154,6 +154,28 @@ function generateMockContributions(): ContributionsData {
   }
   
   return { weeks };
+}
+
+function calculateTotalContributions(data: ContributionsData): number {
+  return data.weeks.reduce((total, week) => {
+    return total + week.contributionDays.reduce((weekTotal, day) => {
+      return weekTotal + day.contributionCount;
+    }, 0);
+  }, 0);
+}
+
+function generateContributionsWithStats(data: ContributionsData): string {
+  const svg = generateContributionsSVG(data);
+  const totalContributions = calculateTotalContributions(data);
+  
+  return `
+    <div class="contributions-wrapper">
+      ${svg}
+      <div class="contributions-stats">
+        <span class="contributions-count">${totalContributions.toLocaleString()} contributions in the last year</span>
+      </div>
+    </div>
+  `;
 }
 
 function generateContributionsSVG(data: ContributionsData): string {

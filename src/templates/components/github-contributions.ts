@@ -11,23 +11,33 @@ export const renderGithubContributions = async () => {
       <style>
         .contributions-chart {
           display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          min-height: 100px;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+        .contributions-wrapper {
           overflow-x: auto;
           overflow-y: hidden;
         }
-        .contributions-chart svg {
+        .contributions-wrapper svg {
           min-width: 700px;
           height: auto;
           flex-shrink: 0;
         }
+        .contributions-stats {
+          margin-top: 8px;
+        }
+        .contributions-count {
+          font-size: 12px;
+          color: #8b949e;
+          font-family: monospace;
+        }
         
         @media (min-width: 768px) {
-          .contributions-chart {
+          .contributions-wrapper {
             overflow-x: visible;
           }
-          .contributions-chart svg {
+          .contributions-wrapper svg {
             min-width: auto;
             max-width: 100%;
             flex-shrink: 1;
