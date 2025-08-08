@@ -1,14 +1,15 @@
 import { fetchGitHubContributions } from '../../lib/github-contributions.js';
 
 export const renderGithubContributions = async () => {
-  const contributionsSVG = await fetchGitHubContributions('themattmayfield');
+  const contributionsData = await fetchGitHubContributions('themattmayfield');
 
   return `
     <div class="github-contributions-container mb-6">
       <div class="contributions-chart">
         <div class="contributions-wrapper">
-          ${contributionsSVG}
+          ${contributionsData.svg}
         </div>
+        ${contributionsData.stats}
       </div>
       <style>
         .contributions-chart {
