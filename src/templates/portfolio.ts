@@ -31,7 +31,7 @@ export async function renderPortfolio(data: PortfolioData): Promise<string> {
     </script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="bg-black min-h-screen antialiased text-[#BBBBBB]">
+<body class="bg-black min-h-screen antialiased text-[#BBBBBB] overflow-x-hidden">
  <div class="h-[88px] flex justify-between items-center px-7">
    <div class="typing-container">
     <span id="typing-text"></span>

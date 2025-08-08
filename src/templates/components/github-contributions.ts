@@ -2,11 +2,13 @@ import { fetchGitHubContributions } from '../../lib/github-contributions.js';
 
 export const renderGithubContributions = async () => {
   const contributionsSVG = await fetchGitHubContributions('themattmayfield');
-  
+
   return `
     <div class="github-contributions-container mb-6">
       <div class="contributions-chart">
-        ${contributionsSVG}
+        <div class="contributions-wrapper">
+          ${contributionsSVG}
+        </div>
       </div>
       <style>
         .contributions-chart {
@@ -18,6 +20,8 @@ export const renderGithubContributions = async () => {
         .contributions-wrapper {
           overflow-x: auto;
           overflow-y: hidden;
+          width: 100%;
+          max-width: 100%;
         }
         .contributions-wrapper svg {
           min-width: 700px;
@@ -47,4 +51,3 @@ export const renderGithubContributions = async () => {
     </div>
   `;
 };
-
