@@ -1,2 +1,2 @@
-Hero of the web. Digital architect. React connoisseur
+Hero of the web. Digital architect. React connoisseur 🚢
 -----------------------------------------------------
